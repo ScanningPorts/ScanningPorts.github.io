@@ -1,405 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <script>
-    if (location.protocol === 'http:') {
-      location.replace(location.href.replace(/^http:/, 'https:'));
-    }
-  </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>endrosity's vault</title>
-  <link rel="icon" type="image/x-icon" href="favi.png" />
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #000;
-      height: 100%;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-      cursor: url('cursor.png'), auto;
-    }
-
-    #b7f6pz {
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 999;
-    }
-
-    .xj2nro {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 6px 10px;
-      border-radius: 8px;
-      user-select: none;
-      z-index: 1000;
-      cursor: url('cursor.png'), auto;
-    }
-
-    .fycqbr {
-      background: transparent;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      user-select: none;
-    }
-
-    .fycqbr img {
-      width: 28px;
-      height: 28px;
-      display: block;
-      pointer-events: none;
-      transition: filter 0.3s ease;
-    }
-
-    .fycqbr:hover img {
-      filter: brightness(1.2);
-    }
-
-    input[type="range"] {
-      width: 100px;
-      cursor: url('cursor.png'), pointer;
-      -webkit-appearance: none;
-      background: rgba(128, 128, 128, 0.3);
-      height: 6px;
-      border-radius: 3px;
-      transition: background 0.3s ease;
-    }
-
-    input[type="range"]:hover {
-      background: rgba(128, 128, 128, 0.5);
-    }
-
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 16px;
-      height: 16px;
-      background: #9916A0;
-      cursor: url('cursor.png'), pointer;
-      border-radius: 50%;
-      margin-top: -5px;
-    }
-
-    input[type="range"]:hover::-webkit-slider-thumb {
-      background: #b33fc0;
-    }
-
-    input[type="range"]::-moz-range-thumb {
-      width: 16px;
-      height: 16px;
-      background: #9916A0;
-      cursor: url('cursor.png'), pointer;
-      border-radius: 50%;
-    }
-
-    input[type="range"]:hover::-moz-range-thumb {
-      background: #b33fc0;
-    }
-
-    .k3lqcz {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      transform-origin: top center;
-      animation: s9otbr 2s ease-in-out infinite alternate;
-    }
-
-    .k3lqcz img {
-      display: block;
-      pointer-events: none;
-      user-select: none;
-      max-width: 100%;
-      height: auto;
-    }
-
-    @keyframes s9otbr {
-      from {
-        transform: translateX(-50%) rotate(-3deg);
+  <head>
+    <script>
+      if (location.protocol === 'http:') {
+        location.replace(location.href.replace(/^http:/, 'https:'));
       }
-      to {
-        transform: translateX(-50%) rotate(3deg);
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>endrosity's vault</title>
+    <link rel="icon" type="image/x-icon" href="favi.png" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        height: 100%;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+        cursor: url('cursor.png'), auto;
       }
-    }
 
-    .g4hmsx {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      font-size: 1em;
-      font-weight: bold;
-      color: #9916A0;
-      text-shadow: 0 0 2px #9916A0, 0 0 4px #9916A0, 0 0 16px #9916A0, 0 0 24px #9916A0;
-    }
-
-    .vg5twr {
-      position: absolute;
-      bottom: 260px;
-      width: 100%;
-      text-align: center;
-      font-weight: bold;
-      font-size: 2em;
-    }
-
-    .vg5twr a {
-      color: white;
-      text-decoration: underline;
-      font-weight: bold;
-      text-shadow: 0 0 1px white, 0 0 2px white, 0 0 4px white;
-      transition: transform 0.3s ease;
-      display: inline-block;
-      cursor: url('cursor.png'), auto;
-    }
-
-    .vg5twr a:hover {
-      transform: scale(1.3);
-    }
-
-    #kjr41p {
-      color: #550400;
-      font-weight: bold;
-      text-shadow: 0 0 5px #550400, 0 0 10px #550400;
-      font-size: 1em;
-      user-select: none;
-    }
-
-    .drmwjv {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 6px 12px;
-      border-radius: 8px;
-      user-select: none;
-      z-index: 1001;
-      cursor: url('cursor.png'), auto;
-    }
-
-    .xpnlyf {
-      background: transparent;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      user-select: none;
-      font-weight: bold;
-      color: #550400;
-      font-size: 1em;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-shadow: 0 0 2px #550400, 0 0 4px #550400, 0 0 16px #550400, 0 0 24px #550400;
-    }
-
-    .xpnlyf img {
-      width: 24px;
-      height: 24px;
-      pointer-events: none;
-      user-select: none;
-    }
-	
-	button, button * {
-		cursor: url('cursor.png'), auto !important;
-	}
-  </style>
-</head>
-<body>
-  <canvas id="b7f6pz"></canvas>
-
-  <div class="xj2nro">
-    <button id="y45nmv" class="fycqbr"><img id="o9tdkr" src="speaker-muted.png" /></button>
-    <input type="range" id="n6wplj" min="0" max="1" step="0.01" value="0.5" />
-    <button id="qz5c8b" class="fycqbr"><img src="skip-back.png" /></button>
-    <button id="c3r7yx" class="fycqbr"><img id="r1fqe6" src="play.png" /></button>
-    <button id="dp8mzv" class="fycqbr"><img src="skip-forward.png" /></button>
-    <span id="kjr41p"></span>
-  </div>
-
-  <div class="k3lqcz"><img id="lm8xot" src="" /></div>
-  <div class="vg5twr"><a href="https://doxbin.cc/0" target="_blank">Find me elsewhere</a></div>
-  <div class="g4hmsx">endrosity</div>
-  <audio id="txf4jm"></audio>
-
-  <div class="drmwjv">
-    <button id="h0snir" class="xpnlyf">
-      <img src="reload.png" />
-      <span>Reload Image</span>
-    </button>
-  </div>
-
-  <script>
-    const t0 = document.getElementById('lm8xot');
-    const t1 = ['hanging.png', 'swinging.png', 'sayori.png', 'swing.png'];
-
-    function x5() {
-      let newIndex;
-      do {
-        newIndex = Math.floor(Math.random() * t1.length);
-      } while (t0.src.endsWith(t1[newIndex]) && t1.length > 1);
-      t0.src = t1[newIndex];
-    }
-    x5();
-
-    const t2 = document.getElementById('txf4jm');
-    const t3 = document.getElementById('y45nmv');
-    const t4 = document.getElementById('o9tdkr');
-    const t5 = document.getElementById('c3r7yx');
-    const t6 = document.getElementById('r1fqe6');
-    const t7 = document.getElementById('n6wplj');
-    const t8 = document.getElementById('qz5c8b');
-    const t9 = document.getElementById('dp8mzv');
-    const t10 = document.getElementById('kjr41p');
-    let u0 = [
-      'audios/Lovely.mp3',
-      'audios/Nights.mp3',
-      'audios/Breaking.mp3',
-      'audios/Aware.mp3',
-      'audios/Power.mp3',
-      'audios/Resonance.mp3'
-    ];
-    let u1 = [], u2 = 0;
-
-    function y1(a) {
-      for (let b = a.length - 1; b > 0; b--) {
-        const c = Math.floor(Math.random() * (b + 1));
-        [a[b], a[c]] = [a[c], a[b]];
+      #b7f6pz {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 999;
       }
-      return a;
-    }
 
-    function z7() {
-      let a = y1([...u0]);
-      if (u1.length > 0 && a[0] === u1[u1.length - 1]) [a[0], a[1]] = [a[1], a[0]];
-      u1 = a;
-      u2 = 0;
-    }
-
-    function m8() {
-      const a = u1[u2];
-      while (t2.firstChild) t2.removeChild(t2.firstChild);
-      const b = document.createElement('source');
-      b.src = a;
-      b.type = 'audio/mpeg';
-      t2.appendChild(b);
-      t2.load();
-      const c = a.split('/').pop();
-      t10.textContent = `Now Playing: ${c}`;
-    }
-
-    function n4() {
-      const wasPaused = t2.paused;
-      u2++;
-      if (u2 >= u1.length) z7();
-      m8();
-      if (!wasPaused) {
-        t2.play();
+      .xj2nro {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 6px 10px;
+        border-radius: 8px;
+        user-select: none;
+        z-index: 1000;
+        cursor: url('cursor.png'), auto;
       }
-    }
 
-    function o3() {
-      const wasPaused = t2.paused;
-      u2 = (u2 - 1 + u1.length) % u1.length;
-      m8();
-      if (!wasPaused) {
-        t2.play();
+      .fycqbr {
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
       }
-    }
 
-    z7();
-    m8();
-    t7.value = 0.5;
-    t2.volume = 0.5;
-    t2.muted = false;
-    t2.pause();
-    t6.src = 'play.png';
-    t4.src = 'speaker-unmuted.png';
-
-    t3.onclick = () => {
-      t2.muted = !t2.muted;
-      t4.src = t2.muted ? 'speaker-muted.png' : 'speaker-unmuted.png';
-    };
-
-    t5.onclick = () => {
-      if (t2.paused) {
-        t2.play();
-        t6.src = 'pause.png';
-      } else {
-        t2.pause();
-        t6.src = 'play.png';
+      .fycqbr img {
+        width: 28px;
+        height: 28px;
+        display: block;
+        pointer-events: none;
+        transition: filter 0.3s ease;
       }
-    };
 
-    t8.onclick = o3;
-    t9.onclick = n4;
-
-    t7.oninput = (e) => {
-      t2.volume = parseFloat(e.target.value);
-    };
-
-    t2.onended = n4;
-
-    const c0 = document.getElementById('b7f6pz');
-    const c1 = c0.getContext('2d');
-    let c2 = [];
-    const c3 = 1, c4 = 200;
-
-    function c5() {
-      c0.width = window.innerWidth;
-      c0.height = window.innerHeight;
-    }
-
-    window.addEventListener('resize', c5);
-    c5();
-
-    document.addEventListener('mousemove', (e) => {
-      for (let a = 0; a < c3; a++) {
-        c2.push({
-          x: e.clientX + Math.random() * 20 - 10,
-          y: e.clientY + Math.random() * 20 - 10,
-          radius: Math.random() * 2 + 1,
-          speedY: Math.random() * 1 + 0.5,
-          speedX: Math.random() * 0.5 - 0.25,
-          alpha: 1
-        });
+      .fycqbr:hover img {
+        filter: brightness(1.2);
       }
-      if (c2.length > c4) c2.splice(0, c2.length - c4);
-    });
 
-    function c6() {
-      c1.clearRect(0, 0, c0.width, c0.height);
-      for (let a = c2.length - 1; a >= 0; a--) {
-        let b = c2[a];
-        b.y += b.speedY;
-        b.x += b.speedX;
-        b.alpha -= 0.005;
-        c1.beginPath();
-        c1.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
-        c1.fillStyle = `rgba(85, 4, 0, ${b.alpha})`;
-        c1.fill();
-        if (b.alpha <= 0) c2.splice(a, 1);
+      input[type='range'] {
+        width: 100px;
+        cursor: url('cursor.png'), pointer;
+        -webkit-appearance: none;
+        background: rgba(128, 128, 128, 0.3);
+        height: 6px;
+        border-radius: 3px;
+        transition: background 0.3s ease;
       }
-      requestAnimationFrame(c6);
-    }
 
-    c6();
+      input[type='range']:hover {
+        background: rgba(128, 128, 128, 0.5);
+      }
 
-    const c7 = document.getElementById('h0snir');
-    c7.onclick = () => {
+      input[type='range']::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 16px;
+        height: 16px;
+        background: #9916a0;
+        cursor: url('cursor.png'), pointer;
+        border-radius: 50%;
+        margin-top: -5px;
+      }
+
+      input[type='range']:hover::-webkit-slider-thumb {
+        background: #b33fc0;
+      }
+
+      input[type='range']::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+        background: #9916a0;
+        cursor: url('cursor.png'), pointer;
+        border-radius: 50%;
+      }
+
+      input[type='range']:hover::-moz-range-thumb {
+        background: #b33fc0;
+      }
+
+      .k3lqcz {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transform-origin: top center;
+        animation: s9otbr 2s ease-in-out infinite alternate;
+      }
+
+      .k3lqcz img {
+        display: block;
+        pointer-events: none;
+        user-select: none;
+        max-width: 100%;
+        height: auto;
+      }
+
+      @keyframes s9otbr {
+        from {
+          transform: translateX(-50%) rotate(-3deg);
+        }
+        to {
+          transform: translateX(-50%) rotate(3deg);
+        }
+      }
+
+      .g4hmsx {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        font-size: 1em;
+        font-weight: bold;
+        color: #9916a0;
+        text-shadow: 0 0 2px #9916a0, 0 0 4px #9916a0, 0 0 16px #9916a0,
+          0 0 24px #9916a0;
+      }
+
+      .vg5twr {
+        position: absolute;
+        bottom: 260px;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 2em;
+      }
+
+      .vg5twr a {
+        color: white;
+        text-decoration: underline;
+        font-weight: bold;
+        text-shadow: 0 0 1px white, 0 0 2px white, 0 0 4px white;
+        transition: transform 0.3s ease;
+        display: inline-block;
+        cursor: url('cursor.png'), auto;
+      }
+
+      .vg5twr a:hover {
+        transform: scale(1.3);
+      }
+
+      #kjr41p {
+        color: #550400;
+        font-weight: bold;
+        text-shadow: 0 0 5px #550400, 0 0 10px #550400;
+        font-size: 1em;
+        user-select: none;
+      }
+
+      .drmwjv {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 6px 12px;
+        border-radius: 8px;
+        user-select: none;
+        z-index: 1001;
+        cursor: url('cursor.png'), auto;
+      }
+
+      .xpnlyf {
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        user-select: none;
+        font-weight: bold;
+        color: #550400;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-shadow: 0 0 2px #550400, 0 0 4px #550400, 0 0 16px #550400,
+          0 0 24px #550400;
+      }
+
+      .xpnlyf img {
+        width: 24px;
+        height: 24px;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      button,
+      button * {
+        cursor: url('cursor.png'), auto !important;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="b7f6pz"></canvas>
+
+    <div class="xj2nro">
+      <button id="y45nmv" class="fycqbr">
+        <img id="o9tdkr" src="speaker-muted.png" />
+      </button>
+      <input
+        type="range"
+        id="n6wplj"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.5"
+      />
+      <button id="qz5c8b" class="fycqbr">
+        <img src="skip-back.png" />
+      </button>
+      <button id="c3r7yx" class="fycqbr">
+        <img id="r1fqe6" src="play.png" />
+      </button>
+      <button id="dp8mzv" class="fycqbr">
+        <img src="skip-forward.png" />
+      </button>
+      <span id="kjr41p"></span>
+    </div>
+
+    <div class="k3lqcz">
+      <img id="lm8xot" src="" />
+    </div>
+
+    <div class="vg5twr">
+      <a href="https://doxbin.cc/0" target="_blank">Find me elsewhere</a>
+    </div>
+
+    <div class="g4hmsx">endrosity</div>
+
+    <audio id="txf4jm"></audio>
+
+    <div class="drmwjv">
+      <button id="h0snir" class="xpnlyf">
+        <img src="reload.png" />
+        <span>Reload Image</span>
+      </button>
+    </div>
+
+    <script>
+      const t0 = document.getElementById('lm8xot');
+      const t1 = ['hanging.png', 'swinging.png', 'sayori.png', 'swing.png'];
+
+      function x5() {
+        let newIndex;
+        do {
+          newIndex = Math.floor(Math.random() * t1.length);
+        } while (t0.src.endsWith(t1[newIndex]) && t1.length > 1);
+        t0.src = t1[newIndex];
+      }
+
       x5();
-    };
-  </script>
-</body>
+
+      const t2 = document.getElementById('txf4jm');
+      const t3 = document.getElementById('y45nmv');
+      const t4 = document.getElementById('o9tdkr');
+      const t5 = document.getElementById('c3r7yx');
+      const t6 = document.getElementById('r1fqe6');
+      const t7 = document.getElementById('n6wplj');
+      const t8 = document.getElementById('qz5c8b');
+      const t9 = document.getElementById('dp8mzv');
+      const t10 = document.getElementById('kjr41p');
+
+      let u0 = [
+        'audios/Lovely.mp3',
+        'audios/Nights.mp3',
+        'audios/Breaking.mp3',
+        'audios/Aware.mp3',
+        'audios/Power.mp3',
+        'audios/Resonance.mp3',
+        'audios/Sleeping.mp3',
+        'audios/Slump.mp3'
+      ];
+      let u1 = [],
+        u2 = 0;
+
+      function y1(a) {
+        for (let b = a.length - 1; b > 0; b--) {
+          const c = Math.floor(Math.random() * (b + 1));
+          [a[b], a[c]] = [a[c], a[b]];
+        }
+        return a;
+      }
+
+      function z7() {
+        let a = y1([...u0]);
+        if (u1.length > 0 && a[0] === u1[u1.length - 1])
+          [a[0], a[1]] = [a[1], a[0]];
+        u1 = a;
+        u2 = 0;
+      }
+
+      function m8() {
+        const a = u1[u2];
+        while (t2.firstChild) t2.removeChild(t2.firstChild);
+        const b = document.createElement('source');
+        b.src = a;
+        b.type = 'audio/mpeg';
+        t2.appendChild(b);
+        t2.load();
+        const c = a.split('/').pop();
+        t10.textContent = `Now Playing: ${c}`;
+      }
+
+      function n4(autoPlay = true) {
+        u2++;
+        if (u2 >= u1.length) z7();
+        m8();
+        if (autoPlay) t2.play();
+      }
+
+      function o3(autoPlay = true) {
+        u2 = (u2 - 1 + u1.length) % u1.length;
+        m8();
+        if (autoPlay) t2.play();
+      }
+
+      z7();
+      m8();
+      t7.value = 0.5;
+      t2.volume = 0.5;
+      t2.muted = false;
+      t2.pause();
+      t6.src = 'play.png';
+      t4.src = 'speaker-unmuted.png';
+
+      t3.onclick = () => {
+        t2.muted = !t2.muted;
+        t4.src = t2.muted
+          ? 'speaker-muted.png'
+          : 'speaker-unmuted.png';
+      };
+
+      t5.onclick = () => {
+        if (t2.paused) {
+          t2.play();
+          t6.src = 'pause.png';
+        } else {
+          t2.pause();
+          t6.src = 'play.png';
+        }
+      };
+
+      t8.onclick = () => o3(!t2.paused);
+      t9.onclick = () => n4(!t2.paused);
+      t7.oninput = (e) => {
+        t2.volume = parseFloat(e.target.value);
+      };
+      t2.onended = () => n4(true);
+
+      const c0 = document.getElementById('b7f6pz');
+      const c1 = c0.getContext('2d');
+      let c2 = [];
+      const c3 = 1,
+        c4 = 200;
+
+      function c5() {
+        c0.width = window.innerWidth;
+        c0.height = window.innerHeight;
+      }
+
+      window.addEventListener('resize', c5);
+      c5();
+
+      document.addEventListener('mousemove', (e) => {
+        for (let a = 0; a < c3; a++) {
+          c2.push({
+            x: e.clientX + Math.random() * 20 - 10,
+            y: e.clientY + Math.random() * 20 - 10,
+            radius: Math.random() * 2 + 1,
+            speedY: Math.random() * 1 + 0.5,
+            speedX: Math.random() * 0.5 - 0.25,
+            alpha: 1
+          });
+        }
+        if (c2.length > c4) c2.splice(0, c2.length - c4);
+      });
+
+      function c6() {
+        c1.clearRect(0, 0, c0.width, c0.height);
+        for (let a = c2.length - 1; a >= 0; a--) {
+          let b = c2[a];
+          b.y += b.speedY;
+          b.x += b.speedX;
+          b.alpha -= 0.005;
+          c1.beginPath();
+          c1.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
+          c1.fillStyle = `rgba(85, 4, 0, ${b.alpha})`;
+          c1.fill();
+          if (b.alpha <= 0) c2.splice(a, 1);
+        }
+        requestAnimationFrame(c6);
+      }
+
+      c6();
+
+      const c7 = document.getElementById('h0snir');
+      c7.onclick = () => {
+        x5();
+      };
+    </script>
+  </body>
 </html>

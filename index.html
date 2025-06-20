@@ -12,17 +12,17 @@
 document.addEventListener("contextmenu", e => e.preventDefault());
 
 document.addEventListener("keydown", function(e) {
+  const key = e.key.toLowerCase();
+
   if (
-    e.key === "F12" ||
-    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
-    (e.ctrlKey && e.key === "U") ||
-    ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s")
+    key === "f12" ||
+    (e.ctrlKey && e.shiftKey && (key === "i" || key === "j" || key === "c")) ||
+    (e.ctrlKey && key === "u") ||
+    ((e.ctrlKey || e.metaKey) && key === "s")
   ) {
     e.preventDefault();
     e.stopPropagation();
-    if (e.key.toLowerCase() === "s") {
-      alert("Saving is disabled.");
-    }
+    alert("Inspection is disabled.");
     return false;
   }
 });
@@ -31,9 +31,9 @@ document.addEventListener("keydown", function(e) {
   const nodebugretard = () => {
     setInterval(() => {
       const before = performance.now();
+      debugger;
       if (performance.now() - before > 1) {
         alert("Inspection is disabled.\nBlehhhh.");
-		debugger;
       }
     }, 1000);
   };

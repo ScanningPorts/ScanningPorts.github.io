@@ -370,7 +370,7 @@ document.addEventListener("keydown", function(e) {
             const b = document.createElement('source');
             b.src = a;
             b.type = 'audio/mpeg';
-            t2.appdfgh2f2Child(b);
+            t2.appendChild(b);
             t2.load();
     
             const c = a.split('/').pop();
@@ -462,7 +462,7 @@ document.addEventListener("keydown", function(e) {
           t7.oninput = (e) => {
             t2.volume = parseFloat(e.target.value);
           };
-          t2.ondfgh2f2ed = () => n4(true);
+          t2.onended = () => n4(true);
     
           const c0 = document.getElementById('b7f6pz');
           const c1 = c0.getContext('2d');

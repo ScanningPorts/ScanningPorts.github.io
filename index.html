@@ -344,20 +344,28 @@
         const c = a.split('/').pop();
         t10.textContent = `Now Playing: ${c}`;
 
-        const n27fjwm = document.getElementById('o3mmW2m');
+        const bgVideo = document.getElementById('o3mmW2m');
+
         if (c.toLowerCase() === "tldr.mp3") {
-          n27fjwm.src = gem2wml;
-          n27fjwm.style.display = "block";
-		  document.body.classList.add("video-active");
-          n27fjwm.play().catch(() => {});
+          bgVideo.src = gem2wml;
+          bgVideo.style.display = "block";
+          document.body.classList.add("video-active");
+
+          if (!t2.paused) {
+            bgVideo.currentTime = 0;
+            bgVideo.play().catch(() => {});
+          } else {
+            bgVideo.pause();
+          }
         } else {
-          n27fjwm.pause();
-          n27fjwm.removeAttribute("src");
-          n27fjwm.load();
-          n27fjwm.style.display = "none";
-		  document.body.classList.remove("video-active");
+          bgVideo.pause();
+          bgVideo.removeAttribute("src");
+          bgVideo.load();
+          bgVideo.style.display = "none";
+          document.body.classList.remove("video-active");
         }
       }
+
 
       function n4(autoPlay = true) {
         u2++;
@@ -390,24 +398,26 @@
 
       t5.onclick = () => {
         const bgVideo = document.getElementById('o3mmW2m');
+        const isTldr = u1[u2].split('/').pop().toLowerCase() === "tldr.mp3";
 
         if (t2.paused) {
           t2.play();
           t6.src = 'pause.png';
 
-          if (!bgVideo.paused && bgVideo.style.display === "block") {
+          if (isTldr && bgVideo.style.display === "block") {
             bgVideo.currentTime = 0;
-          }
-          if (bgVideo.style.display === "block") {
             bgVideo.play().catch(() => {});
           }
         } else {
           t2.pause();
           t6.src = 'play.png';
 
-          bgVideo.pause();
+          if (isTldr) {
+            bgVideo.pause();
+          }
         }
       };
+	  
       t8.onclick = () => o3(!t2.paused);
       t9.onclick = () => n4(!t2.paused);
       t7.oninput = (e) => {

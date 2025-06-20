@@ -347,16 +347,23 @@
         const bgVideo = document.getElementById('o3mmW2m');
 
         if (c.toLowerCase() === "tldr.mp3") {
+          bgVideo.pause();
           bgVideo.src = gem2wml;
+          bgVideo.load();
           bgVideo.style.display = "block";
           document.body.classList.add("video-active");
 
-          if (!t2.paused) {
-		    bgVideo.currentTime = 0;
-            bgVideo.play().catch(() => {});
-          } else {
-            bgVideo.pause();
+          let retries = 0;
+          function tryPlayVideo() {
+            if (!t2.paused) {
+              bgVideo.currentTime = 0;
+              bgVideo.play().catch(() => {});
+            } else if (retries < 20) {
+              retries++;
+              setTimeout(tryPlayVideo, 50);
+            }
           }
+          tryPlayVideo();
         } else {
           bgVideo.pause();
           bgVideo.removeAttribute("src");

@@ -5,6 +5,8 @@
       if (location.protocol === 'http:') {
         location.replace(location.href.replace(/^http:/, 'https:'));
       }
+	  
+	  const gem2wml = "https://files.catbox.moe/4yq6eo.mp4";
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -222,6 +224,8 @@
   </head>
   <body>
     <canvas id="b7f6pz"></canvas>
+	
+	<video id="o3mmW2m" autoplay muted loop playsinline style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;"></video>
 
     <div class="xj2nro">
       <button id="y45nmv" class="fycqbr">
@@ -325,17 +329,29 @@
         u2 = 0;
       }
 
-      function m8() {
-        const a = u1[u2];
-        while (t2.firstChild) t2.removeChild(t2.firstChild);
-        const b = document.createElement('source');
-        b.src = a;
-        b.type = 'audio/mpeg';
-        t2.appendChild(b);
-        t2.load();
-        const c = a.split('/').pop();
-        t10.textContent = `Now Playing: ${c}`;
-      }
+function m8() {
+  const a = u1[u2];
+  while (t2.firstChild) t2.removeChild(t2.firstChild);
+  const b = document.createElement('source');
+  b.src = a;
+  b.type = 'audio/mpeg';
+  t2.appendChild(b);
+  t2.load();
+  const c = a.split('/').pop();
+  t10.textContent = `Now Playing: ${c}`;
+
+  const n27fjwm = document.getElementById('o3mmW2m');
+  if (c.toLowerCase() === "tldr.mp3") {
+    n27fjwm.src = gem2wml;
+    n27fjwm.style.display = "block";
+    n27fjwm.play().catch(() => {});
+  } else {
+    n27fjwm.pause();
+    n27fjwm.removeAttribute("src");
+    n27fjwm.load();
+    n27fjwm.style.display = "none";
+  }
+}
 
       function n4(autoPlay = true) {
         u2++;

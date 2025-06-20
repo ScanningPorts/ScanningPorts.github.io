@@ -229,7 +229,7 @@
   <body>
     <canvas id="b7f6pz"></canvas>
 	
-	<video id="o3mmW2m" muted loop playsinline style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;"></video>
+	<video id="o3mmW2m" muted loop playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;"></video>
 
     <div class="xj2nro">
       <button id="y45nmv" class="fycqbr">
@@ -333,45 +333,49 @@
         u2 = 0;
       }
 
-      function m8() {
-        const a = u1[u2];
-        while (t2.firstChild) t2.removeChild(t2.firstChild);
-        const b = document.createElement('source');
-        b.src = a;
-        b.type = 'audio/mpeg';
-        t2.appendChild(b);
-        t2.load();
-        const c = a.split('/').pop();
-        t10.textContent = `Now Playing: ${c}`;
+function m8() {
+  const a = u1[u2];
+  while (t2.firstChild) t2.removeChild(t2.firstChild);
+  const b = document.createElement('source');
+  b.src = a;
+  b.type = 'audio/mpeg';
+  t2.appendChild(b);
+  t2.load();
 
-        const bgVideo = document.getElementById('o3mmW2m');
+  const c = a.split('/').pop();
+  t10.textContent = `Now Playing: ${c}`;
 
-        if (c.toLowerCase() === "tldr.mp3") {
-          bgVideo.pause();
-          bgVideo.src = gem2wml;
-          bgVideo.load();
-          bgVideo.style.display = "block";
-          document.body.classList.add("video-active");
+  const bgVideo = document.getElementById('o3mmW2m');
 
-          let retries = 0;
-          function tryPlayVideo() {
-            if (!t2.paused) {
-              bgVideo.currentTime = 0;
-              bgVideo.play().catch(() => {});
-            } else if (retries < 20) {
-              retries++;
-              setTimeout(tryPlayVideo, 50);
-            }
-          }
-          tryPlayVideo();
-        } else {
-          bgVideo.pause();
-          bgVideo.removeAttribute("src");
-          bgVideo.load();
-          bgVideo.style.display = "none";
-          document.body.classList.remove("video-active");
-        }
-      }
+  if (c.toLowerCase() === "tldr.mp3") {
+    bgVideo.pause();
+    bgVideo.src = gem2wml;
+    bgVideo.load();
+    bgVideo.style.display = "block";
+    document.body.classList.add("video-active");
+
+    const onPlay = () => {
+      bgVideo.currentTime = 0;
+      bgVideo.play().catch(() => {});
+      t2.removeEventListener('play', onPlay);
+    };
+
+    if (!t2.paused) {
+      bgVideo.currentTime = 0;
+      bgVideo.play().catch(() => {});
+    } else {
+      t2.addEventListener('play', onPlay);
+    }
+
+  } else {
+    bgVideo.pause();
+    bgVideo.removeAttribute("src");
+    bgVideo.load();
+    bgVideo.style.display = "none";
+    document.body.classList.remove("video-active");
+  }
+}
+
 
 
       function n4(autoPlay = true) {

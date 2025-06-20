@@ -224,6 +224,11 @@
       body.video-active {
         background: transparent !important;
       }
+	  
+	  video::-internal-media-controls-overlay-cast-button,
+	  video::-internal-media-controls-pip-button {
+	    display: none !important;
+	  }
     </style>
   </head>
   <body>
@@ -333,50 +338,48 @@
         u2 = 0;
       }
 
-function m8() {
-  const a = u1[u2];
-  while (t2.firstChild) t2.removeChild(t2.firstChild);
-  const b = document.createElement('source');
-  b.src = a;
-  b.type = 'audio/mpeg';
-  t2.appendChild(b);
-  t2.load();
+      function m8() {
+        const a = u1[u2];
+        while (t2.firstChild) t2.removeChild(t2.firstChild);
+        const b = document.createElement('source');
+        b.src = a;
+        b.type = 'audio/mpeg';
+        t2.appendChild(b);
+        t2.load();
 
-  const c = a.split('/').pop();
-  t10.textContent = `Now Playing: ${c}`;
+        const c = a.split('/').pop();
+        t10.textContent = `Now Playing: ${c}`;
 
-  const bgVideo = document.getElementById('o3mmW2m');
+        const bgVideo = document.getElementById('o3mmW2m');
 
-  if (c.toLowerCase() === "tldr.mp3") {
-    bgVideo.pause();
-    bgVideo.src = gem2wml;
-    bgVideo.load();
-    bgVideo.style.display = "block";
-    document.body.classList.add("video-active");
+        if (c.toLowerCase() === "tldr.mp3") {
+          bgVideo.pause();
+          bgVideo.src = gem2wml;
+          bgVideo.load();
+          bgVideo.style.display = "block";
+          document.body.classList.add("video-active");
 
-    const onPlay = () => {
-      bgVideo.currentTime = 0;
-      bgVideo.play().catch(() => {});
-      t2.removeEventListener('play', onPlay);
-    };
+          const onPlay = () => {
+            bgVideo.currentTime = 0;
+            bgVideo.play().catch(() => {});
+            t2.removeEventListener('play', onPlay);
+          };
 
-    if (!t2.paused) {
-      bgVideo.currentTime = 0;
-      bgVideo.play().catch(() => {});
-    } else {
-      t2.addEventListener('play', onPlay);
-    }
+          if (!t2.paused) {
+            bgVideo.currentTime = 0;
+            bgVideo.play().catch(() => {});
+          } else {
+            t2.addEventListener('play', onPlay);
+          }
 
-  } else {
-    bgVideo.pause();
-    bgVideo.removeAttribute("src");
-    bgVideo.load();
-    bgVideo.style.display = "none";
-    document.body.classList.remove("video-active");
-  }
-}
-
-
+        } else {
+          bgVideo.pause();
+          bgVideo.removeAttribute("src");
+          bgVideo.load();
+          bgVideo.style.display = "none";
+          document.body.classList.remove("video-active");
+        }
+      }
 
       function n4(autoPlay = true) {
         u2++;

@@ -229,7 +229,7 @@
   <body>
     <canvas id="b7f6pz"></canvas>
 	
-	<video id="o3mmW2m" autoplay muted loop playsinline style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: 1;"></video>
+	<video id="o3mmW2m" autoplay muted loop playsinline style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;"></video>
 
     <div class="xj2nro">
       <button id="y45nmv" class="fycqbr">
@@ -389,15 +389,25 @@
       };
 
       t5.onclick = () => {
+        const bgVideo = document.getElementById('o3mmW2m');
+
         if (t2.paused) {
           t2.play();
           t6.src = 'pause.png';
+
+          if (!bgVideo.paused && bgVideo.style.display === "block") {
+            bgVideo.currentTime = 0;
+          }
+          if (bgVideo.style.display === "block") {
+            bgVideo.play().catch(() => {});
+          }
         } else {
           t2.pause();
           t6.src = 'play.png';
+
+          bgVideo.pause();
         }
       };
-
       t8.onclick = () => o3(!t2.paused);
       t9.onclick = () => n4(!t2.paused);
       t7.oninput = (e) => {

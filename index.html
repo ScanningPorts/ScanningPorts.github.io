@@ -4,41 +4,47 @@
 <head>
     <script>
         if (location.protocol === 'http:') {
-            location.replace(location.href.replace(/^http:/, 'https:'));
-          }
-    	  
-    	  const gem2wml = "https://files.catbox.moe/4yq6eo.mp4";
-		  
-document.addEventListener("contextmenu", e => e.preventDefault());
-
-document.addEventListener("keydown", function(e) {
-  const key = e.key.toLowerCase();
-
-  if (
-    key === "f12" ||
-    (e.ctrlKey && e.shiftKey && (key === "i" || key === "j" || key === "c")) ||
-    (e.ctrlKey && key === "u") ||
-    ((e.ctrlKey || e.metaKey) && key === "s")
-  ) {
-    e.preventDefault();
-    e.stopPropagation();
-    alert("Inspection is disabled.");
-    return false;
-  }
-});
-
-(function get32d() {
-  setInterval(() => {
-    const hce32s = performance.now();
-    debugger;
-    const dfgh2f2 = performance.now();
-
-    if (dfgh2f2 - hce32s > 50) {
-      alert("Inspection is disabled.\nBlehhhh.");
-    }
-  }, 150);
-})();
-
+          location.replace(location.href.replace(/^http:/, 'https:'));
+        }
+    
+        const gem2wml = "https://files.catbox.moe/4yq6eo.mp4";
+    
+        const genwkj3 = document.createElement('video');
+        genwkj3.src = gem2wml;
+        genwkj3.preload = "auto";
+        genwkj3.muted = true;
+        genwkj3.playsInline = true;
+        genwkj3.load();
+    		  
+    document.addEventListener("contextmenu", e => e.preventDefault());
+    
+    document.addEventListener("keydown", function(e) {
+      const key = e.key.toLowerCase();
+    
+      if (
+        key === "f12" ||
+        (e.ctrlKey && e.shiftKey && (key === "i" || key === "j" || key === "c")) ||
+        (e.ctrlKey && key === "u") ||
+        ((e.ctrlKey || e.metaKey) && key === "s")
+      ) {
+        e.preventDefault();
+        e.stopPropagation();
+        alert("Inspection is disabled.\nBlehhhh.");
+        return false;
+      }
+    });
+    
+    (function get32d() {
+      setInterval(() => {
+        const hce32s = performance.now();
+        debugger;
+        const dfgh2f2 = performance.now();
+    
+        if (dfgh2f2 - hce32s > 50) {
+          alert("Inspection is disabled.\nBlehhhh.");
+        }
+      }, 150);
+    })();
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -364,48 +370,50 @@ document.addEventListener("keydown", function(e) {
             u2 = 0;
           }
     
-          function m8() {
-            const a = u1[u2];
-            while (t2.firstChild) t2.removeChild(t2.firstChild);
-            const b = document.createElement('source');
-            b.src = a;
-            b.type = 'audio/mpeg';
-            t2.appendChild(b);
-            t2.load();
-    
-            const c = a.split('/').pop();
-            t10.textContent = `Now Playing: ${c}`;
-    
-            const bgVideo = document.getElementById('o3mmW2m');
-    
-            if (c.toLowerCase() === "tldr.mp3") {
-              bgVideo.pause();
-              bgVideo.src = gem2wml;
-              bgVideo.load();
-              bgVideo.style.display = "block";
-              document.body.classList.add("video-active");
-    
-              const onPlay = () => {
-                bgVideo.currentTime = 0;
-                bgVideo.play().catch(() => {});
-                t2.removeEventListener('play', onPlay);
-              };
-    
-              if (!t2.paused) {
-                bgVideo.currentTime = 0;
-                bgVideo.play().catch(() => {});
-              } else {
-                t2.addEventListener('play', onPlay);
-              }
-    
-            } else {
-              bgVideo.pause();
-              bgVideo.removeAttribute("src");
-              bgVideo.load();
-              bgVideo.style.display = "none";
-              document.body.classList.remove("video-active");
-            }
-          }
+function m8() {
+  const a = u1[u2];
+  while (t2.firstChild) t2.removeChild(t2.firstChild);
+  const b = document.createElement('source');
+  b.src = a;
+  b.type = 'audio/mpeg';
+  t2.appendChild(b);
+  t2.load();
+
+  const c = a.split('/').pop();
+  t10.textContent = `Now Playing: ${c}`;
+
+  const bgVideo = document.getElementById('o3mmW2m');
+
+  if (c.toLowerCase() === "tldr.mp3") {
+    if (!bgVideo.src || !bgVideo.src.includes(gem2wml)) {
+      bgVideo.pause();
+      bgVideo.src = gem2wml;
+      bgVideo.load();
+    }
+
+    bgVideo.style.display = "block";
+    document.body.classList.add("video-active");
+
+    const onPlay = () => {
+      bgVideo.play().catch(() => {});
+      t2.removeEventListener('play', onPlay);
+    };
+
+    if (!t2.paused) {
+      bgVideo.play().catch(() => {});
+    } else {
+      t2.addEventListener('play', onPlay);
+    }
+
+  } else {
+    bgVideo.pause();
+    bgVideo.removeAttribute("src");
+    bgVideo.load();
+    bgVideo.style.display = "none";
+    document.body.classList.remove("video-active");
+  }
+}
+
     
           function n4(autoPlay = true) {
             u2++;

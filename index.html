@@ -4,50 +4,53 @@
 <head>
     <script>
         if (location.protocol === 'http:') {
-          location.replace(location.href.replace(/^http:/, 'https:'));
-        }
-    
-        const gem2wml = "https://files.catbox.moe/4yq6eo.mp4";
-    
-        const genwkj3 = document.createElement('video');
-        genwkj3.src = gem2wml;
-        genwkj3.preload = "auto";
-        genwkj3.muted = true;
-        genwkj3.playsInline = true;
-        genwkj3.load();
-    		  
-    document.addEventListener("contextmenu", e => e.preventDefault());
-    
-    document.addEventListener("keydown", function(e) {
-      const key = e.key.toLowerCase();
-    
-      if (
-        key === "f12" ||
-        (e.ctrlKey && e.shiftKey && (key === "i" || key === "j" || key === "c")) ||
-        (e.ctrlKey && key === "u") ||
-        ((e.ctrlKey || e.metaKey) && key === "s")
-      ) {
-        e.preventDefault();
-        e.stopPropagation();
-        alert("Inspection is disabled.\nBlehhhh.");
-        return false;
-      }
-    });
-    
-    (function get32d() {
-      setInterval(() => {
-        const hce32s = performance.now();
-        debugger;
-        const dfgh2f2 = performance.now();
-    
-        if (dfgh2f2 - hce32s > 50) {
-          alert("Inspection is disabled.\nBlehhhh.");
-        }
-      }, 150);
-    })();
+            location.replace(location.href.replace(/^http:/, 'https:'));
+          }
+        
+          const gem2wml = "https://files.catbox.moe/4yq6eo.mp4";
+        
+          document.addEventListener("DOMContentLoaded", function () {
+            const genwkj3 = document.createElement('video');
+            genwkj3.src = gem2wml;
+            genwkj3.preload = "auto";
+            genwkj3.muted = true;
+            genwkj3.playsInline = true;
+            genwkj3.load();
+          });
+            		  
+            document.addEventListener("contextmenu", e => e.preventDefault());
+            
+            document.addEventListener("keydown", function(e) {
+              const key = e.key.toLowerCase();
+            
+              if (
+                key === "f12" ||
+                (e.ctrlKey && e.shiftKey && (key === "i" || key === "j" || key === "c")) ||
+                (e.ctrlKey && key === "u") ||
+                ((e.ctrlKey || e.metaKey) && key === "s")
+              ) {
+                e.preventDefault();
+                e.stopPropagation();
+                alert("Inspection is disabled.\nBlehhhh.");
+                return false;
+              }
+            });
+            
+            (function get32d() {
+              setInterval(() => {
+                const hce32s = performance.now();
+                debugger;
+                const dfgh2f2 = performance.now();
+            
+                if (dfgh2f2 - hce32s > 50) {
+                  alert("Inspection is disabled.\nBlehhhh.");
+                }
+              }, 150);
+            })();
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
     <title>endrosity's vault</title>
     <link rel="icon" type="image/x-icon" href="favi.png" />
     <style>
@@ -267,6 +270,15 @@
     	  video::-internal-media-controls-pip-button {
     	    display: none !important;
     	  }
+		  
+#o3mmW2m {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.video-active #o3mmW2m {
+  opacity: 1;
+}
     </style>
 </head>
 
@@ -382,34 +394,34 @@ function m8() {
   const c = a.split('/').pop();
   t10.textContent = `Now Playing: ${c}`;
 
-  const bgVideo = document.getElementById('o3mmW2m');
+  const he4rgds = document.getElementById('o3mmW2m');
 
   if (c.toLowerCase() === "tldr.mp3") {
-    if (!bgVideo.src || !bgVideo.src.includes(gem2wml)) {
-      bgVideo.pause();
-      bgVideo.src = gem2wml;
-      bgVideo.load();
+    if (!he4rgds.src.endsWith("TLDR.mp4")) {
+      he4rgds.pause();
+      he4rgds.src = gem2wml;
+      he4rgds.load();
     }
 
-    bgVideo.style.display = "block";
+    he4rgds.style.display = "block";
     document.body.classList.add("video-active");
 
     const onPlay = () => {
-      bgVideo.play().catch(() => {});
+      he4rgds.play().catch(() => {});
       t2.removeEventListener('play', onPlay);
     };
 
     if (!t2.paused) {
-      bgVideo.play().catch(() => {});
+      he4rgds.play().catch(() => {});
     } else {
       t2.addEventListener('play', onPlay);
     }
 
   } else {
-    bgVideo.pause();
-    bgVideo.removeAttribute("src");
-    bgVideo.load();
-    bgVideo.style.display = "none";
+    he4rgds.pause();
+    he4rgds.removeAttribute("src");
+    he4rgds.load();
+    he4rgds.style.display = "none";
     document.body.classList.remove("video-active");
   }
 }
@@ -445,22 +457,22 @@ function m8() {
           };
     
           t5.onclick = () => {
-            const bgVideo = document.getElementById('o3mmW2m');
+            const he4rgds = document.getElementById('o3mmW2m');
             const isTldr = u1[u2].split('/').pop().toLowerCase() === "tldr.mp3";
     
             if (t2.paused) {
               t2.play();
               t6.src = 'pause.png';
     
-              if (isTldr && bgVideo.style.display === "block") {
-                bgVideo.play().catch(() => {});
+              if (isTldr && he4rgds.style.display === "block") {
+                he4rgds.play().catch(() => {});
               }
             } else {
               t2.pause();
               t6.src = 'play.png';
     
               if (isTldr) {
-                bgVideo.pause();
+                he4rgds.pause();
               }
             }
           };

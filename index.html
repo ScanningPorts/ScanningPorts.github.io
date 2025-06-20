@@ -352,7 +352,7 @@
           document.body.classList.add("video-active");
 
           if (!t2.paused) {
-            bgVideo.currentTime = 0;
+		    bgVideo.currentTime = 0;
             bgVideo.play().catch(() => {});
           } else {
             bgVideo.pause();
@@ -405,7 +405,6 @@
           t6.src = 'pause.png';
 
           if (isTldr && bgVideo.style.display === "block") {
-            bgVideo.currentTime = 0;
             bgVideo.play().catch(() => {});
           }
         } else {

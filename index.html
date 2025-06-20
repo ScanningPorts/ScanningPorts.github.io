@@ -31,9 +31,9 @@ document.addEventListener("keydown", function(e) {
   const nodebugretard = () => {
     setInterval(() => {
       const before = performance.now();
-      debugger;
       if (performance.now() - before > 1) {
         alert("Inspection is disabled.\nBlehhhh.");
+		debugger;
       }
     }, 1000);
   };

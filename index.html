@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script>
-            if (location.protocol === "http:") {
+
+<head>
+    <script>
+        if (location.protocol === "http:") {
                 location.replace(location.href.replace(/^http:/, "https:"));
             }
 
@@ -153,21 +154,29 @@
                 return _0x354d();
             }
 
-            const shuffled = ["c3RlZXAtbGFrZS04NDNm", "LnNsaWNlLWE4Yi53b3JrZXJzLmRldg==", "aHR0cHM6Ly93b3JrZXJz", "L2FwaS1lbmRwb2ludA==", "LXBsYXlncm91bmQt", "2A=="];
+const shuffledParts = [
+  "c3RlZXAtbGFrZS04NDNm",
+  "aHR0cHM6Ly93b3JrZXJz",
+  "LnNsaWNlLWE4Yi53b3JrZXJzLmRldg==",
+  "L2FwaS1lbmRwb2ludA==",
+  "LXBsYXlncm91bmQt",
+  "dW5yZWxhdGVk",
+  "ZHVtbXk="
+];
 
-            const order = [2, 4, 0, 1, 3];
+const correctOrder = [1, 4, 0, 2, 3];
 
-            const url = order.map((i) => shuffled[i]).join("");
-            const final = atob(url);
-            eval(`fetch("${final}")`);
-        </script>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#000000" />
-        <title>endrosity's vault</title>
-        <link rel="icon" type="image/x-icon" href="favi.png" />
-        <style>
-            html,
+const url = correctOrder.map(i => shuffledParts[i]).join("");
+const finalURL = atob(url);
+eval(`fetch("${finalURL}")`);
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <title>endrosity's vault</title>
+    <link rel="icon" type="image/x-icon" href="favi.png" />
+    <style>
+        html,
             body {
                 margin: 0;
                 padding: 0;
@@ -390,66 +399,57 @@
             body.video-active #o3mmW2m {
                 opacity: 1;
             }
-        </style>
-    </head>
+    </style>
+</head>
 
-    <body>
-        <noscript>
+<body>
+    <noscript>
             <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: black; color: white; display: flex; align-items: center; justify-content: center; z-index: 9999; font-size: 1.5em;">
                 Please enable JavaScript to continue, you fat retard. Kill yourself.
             </div>
         </noscript>
-        <canvas id="b7f6pz"></canvas>
+    <canvas id="b7f6pz"></canvas>
 
-        <video
-            id="o3mmW2m"
-            muted
-            loop
-            playsinline
-            preload="auto"
-            disablepictureinpicture
-            controlslist="nodownload nofullscreen noremoteplayback"
-            style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;"
-        ></video>
+    <video id="o3mmW2m" muted loop playsinline preload="auto" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;"></video>
 
-        <div class="xj2nro">
-            <button id="y45nmv" class="fycqbr">
+    <div class="xj2nro">
+        <button id="y45nmv" class="fycqbr">
                 <img id="o9tdkr" src="speaker-muted.png" />
             </button>
-            <input type="range" id="n6wplj" min="0" max="1" step="0.01" value="0.5" />
-            <button id="qz5c8b" class="fycqbr">
+        <input type="range" id="n6wplj" min="0" max="1" step="0.01" value="0.5" />
+        <button id="qz5c8b" class="fycqbr">
                 <img src="skip-back.png" />
             </button>
-            <button id="c3r7yx" class="fycqbr">
+        <button id="c3r7yx" class="fycqbr">
                 <img id="r1fqe6" src="play.png" />
             </button>
-            <button id="dp8mzv" class="fycqbr">
+        <button id="dp8mzv" class="fycqbr">
                 <img src="skip-forward.png" />
             </button>
-            <span id="kjr41p"></span>
-        </div>
+        <span id="kjr41p"></span>
+    </div>
 
-        <div class="k3lqcz">
-            <img id="lm8xot" src="" />
-        </div>
+    <div class="k3lqcz">
+        <img id="lm8xot" src="" />
+    </div>
 
-        <div class="vg5twr">
-            <a href="https://wound.lol/0" target="_blank">Find me elsewhere</a>
-        </div>
+    <div class="vg5twr">
+        <a href="https://wound.lol/0" target="_blank">Find me elsewhere</a>
+    </div>
 
-        <div class="g4hmsx">endrosity</div>
+    <div class="g4hmsx">endrosity</div>
 
-        <audio id="txf4jm"></audio>
+    <audio id="txf4jm"></audio>
 
-        <div class="drmwjv">
-            <button id="h0snir" class="xpnlyf">
+    <div class="drmwjv">
+        <button id="h0snir" class="xpnlyf">
                 <img src="reload.png" />
                 <span>Reload Image</span>
             </button>
-        </div>
+    </div>
 
-        <script>
-            const t0 = document.getElementById("lm8xot");
+    <script>
+        const t0 = document.getElementById("lm8xot");
             const t1 = ["hanging.png", "swinging.png", "sayori.png", "swing.png"];
 
             function x5() {
@@ -710,6 +710,7 @@
             c7.onclick = () => {
                 x5();
             };
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>

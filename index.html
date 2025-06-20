@@ -9,32 +9,36 @@
     	  
     	  const gem2wml = "https://files.catbox.moe/4yq6eo.mp4";
 		  
-  document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("contextmenu", e => e.preventDefault());
 
-  document.addEventListener("keydown", function(e) {
-    if (
-      e.key === "F12" ||
-      (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
-      (e.ctrlKey && e.key === "U")
-    ) {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
+document.addEventListener("keydown", function(e) {
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
+    (e.ctrlKey && e.key === "U") ||
+    ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s")
+  ) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.key.toLowerCase() === "s") {
+      alert("Saving is disabled.");
     }
-  });
+    return false;
+  }
+});
 
-  (function blockInspect() {
-    const nodebugretard = () => {
-      setInterval(() => {
-        const before = performance.now();
-        debugger;
-        if (performance.now() - before > 1) {
-          document.body.innerHTML = "<h1>Inspection is disabled.</h1>";
-        }
-      }, 1000);
-    };
-    nodebugretard();
-  })();
+(function blockInspect() {
+  const nodebugretard = () => {
+    setInterval(() => {
+      const before = performance.now();
+      debugger;
+      if (performance.now() - before > 1) {
+        alert("Inspection is disabled.\nBlehhhh.");
+      }
+    }, 1000);
+  };
+  nodebugretard();
+})();
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

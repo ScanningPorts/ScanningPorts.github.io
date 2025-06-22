@@ -401,17 +401,17 @@
 
     <div class="xj2nro">
         <button id="y45nmv" class="fycqbr">
-                <img id="o9tdkr" src="speaker-muted.png" />
+                <img id="o9tdkr" src="assets/buttons/speaker-muted.png" />
             </button>
         <input type="range" id="n6wplj" min="0" max="1" step="0.01" value="0.5" />
         <button id="qz5c8b" class="fycqbr">
-                <img src="skip-back.png" />
+                <img src="assets/buttons/skip-back.png" />
             </button>
         <button id="c3r7yx" class="fycqbr">
-                <img id="r1fqe6" src="play.png" />
+                <img id="r1fqe6" src="assets/buttons/play.png" />
             </button>
         <button id="dp8mzv" class="fycqbr">
-                <img src="skip-forward.png" />
+                <img src="assets/buttons/skip-forward.png" />
             </button>
         <span id="kjr41p"></span>
     </div>
@@ -430,14 +430,14 @@
 
     <div class="drmwjv">
         <button id="h0snir" class="xpnlyf">
-                <img src="reload.png" />
+                <img src="assets/buttons/reload.png" />
                 <span>Reload Image</span>
             </button>
     </div>
 
     <script>
         const t0 = document.getElementById("lm8xot");
-            const t1 = ["hanging.png", "swinging.png", "sayori.png", "swing.png"];
+            const t1 = ["assets/misc/hanging.png", "assets/misc/swinging.png", "assets/misc/sayori.png", "assets/misc/swingset.png"];
 
             function x5() {
                 let newIndex;
@@ -616,12 +616,12 @@
             t2.volume = 0.5;
             t2.muted = false;
             t2.pause();
-            t6.src = "play.png";
-            t4.src = "speaker-unmuted.png";
+            t6.src = "assets/buttons/play.png";
+            t4.src = "assets/buttons/speaker-unmuted.png";
 
             t3.onclick = () => {
                 t2.muted = !t2.muted;
-                t4.src = t2.muted ? "speaker-muted.png" : "speaker-unmuted.png";
+                t4.src = t2.muted ? "assets/buttons/speaker-muted.png" : "assets/buttons/speaker-unmuted.png";
             };
 
             t5.onclick = () => {
@@ -630,14 +630,14 @@
 
                 if (t2.paused) {
                     t2.play();
-                    t6.src = "pause.png";
+                    t6.src = "assets/buttons/pause.png";
 
                     if (isLovely && he4rgds.style.display === "block") {
                         he4rgds.play().catch(() => {});
                     }
                 } else {
                     t2.pause();
-                    t6.src = "play.png";
+                    t6.src = "assets/buttons/play.png";
 
                     if (isLovely) {
                         he4rgds.pause();

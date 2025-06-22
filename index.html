@@ -472,7 +472,7 @@
                 "audios/Loser.mp3",
                 "audios/Crush.mp3",
                 "audios/Crying.mp3",
-                "audios/TLDR.mp3",
+                "audios/Heartbreak.mp3",
                 "audios/Sinner.mp3",
             ];
             let u1 = [],
@@ -519,7 +519,7 @@
                     "o3mmW2m",
                     "play",
                     "78aKdfrw",
-                    "tldr.mp3",
+                    "Lovely.mp3",
                     "endsWith",
                     "29457RkPQgx",
                     "removeChild",
@@ -545,7 +545,7 @@
                     "36wDJWuY",
                     "624780HBHVaV",
                     "type",
-                    "TLDR.mp4",
+                    "Lovely.mp4",
                     "load",
                     "addEventListener",
                     "8170686fRXWag",
@@ -621,20 +621,20 @@
 
             t5.onclick = () => {
                 const he4rgds = document.getElementById("o3mmW2m");
-                const isTldr = u1[u2].split("/").pop().toLowerCase() === "tldr.mp3";
+                const isLovely = u1[u2].split("/").pop().toLowerCase() === "Lovely.mp3";
 
                 if (t2.paused) {
                     t2.play();
                     t6.src = "pause.png";
 
-                    if (isTldr && he4rgds.style.display === "block") {
+                    if (isLovely && he4rgds.style.display === "block") {
                         he4rgds.play().catch(() => {});
                     }
                 } else {
                     t2.pause();
                     t6.src = "play.png";
 
-                    if (isTldr) {
+                    if (isLovely) {
                         he4rgds.pause();
                     }
                 }

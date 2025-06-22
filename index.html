@@ -155,7 +155,6 @@
             }
         
     fetch("https://workers-playground-steep-lake-843f.slice-a8b.workers.dev/api-endpoint")
-
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -386,6 +385,58 @@
             body.video-active #o3mmW2m {
                 opacity: 1;
             }
+			
+            .fjwkmfw-button {
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              font-size: 1em;
+              font-weight: bold;
+              color: #9916a0;
+              text-shadow: 0 0 2px #9916a0, 0 0 4px #9916a0, 0 0 16px #9916a0, 0 0 24px #9916a0;
+              cursor: url("assets/misc/cursor.png"), pointer;
+              user-select: none;
+              z-index: 1000;
+              transition: transform 0.2s ease;
+            }
+            .fjwkmfw-button:hover {
+              transform: scale(1.1);
+            }
+
+            #fjwkmfw-overlay {
+              position: fixed;
+              top: 0; left: 0;
+              width: 100vw; height: 100vh;
+              background: rgba(0, 0, 0, 0.7);
+              z-index: 2000;
+              display: none;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .fjwkmfw-content {
+              background-color: rgba(0, 0, 0, 0.2);
+              border: 2px solid #9916a0;
+              padding: 20px 40px;
+              border-radius: 12px;
+              color: #fff;
+              text-align: center;
+              box-shadow: 0 0 10px #9916a0, 0 0 20px #9916a0;
+              font-size: 1.1em;
+              text-shadow: 0 0 2px #fff;
+            }
+
+            .fjwkmfw-content .highlight {
+              color: #fff;
+              font-weight: bold;
+              text-shadow: 0 0 2px #9916a0, 0 0 6px #9916a0;
+              cursor: url("assets/misc/cursor.png"), pointer;
+              text-decoration: none;
+            }
+
+            .fjwkmfw-content .highlight:hover {
+              text-decoration: underline;
+            }
     </style>
 </head>
 
@@ -424,6 +475,14 @@
         <a href="https://wound.lol/0" target="_blank">Find me elsewhere</a>
     </div>
 
+    <div class="fjwkmfw-button" onclick="togglefjwkmfw()">?</div>
+
+    <div id="fjwkmfw-overlay" onclick="togglefjwkmfw()">
+        <div class="fjwkmfw-content" onclick="event.stopPropagation()">
+            <p>Made by <a href="https://wound.lol/xanax" target="_blank" class="highlight">@xanax</a></p>
+        </div>
+    </div>
+
     <div class="g4hmsx">endrosity</div>
 
     <audio id="txf4jm"></audio>
@@ -436,272 +495,277 @@
     </div>
 
     <script>
-        const t0 = document.getElementById("lm8xot");
-            const t1 = ["assets/misc/hanging.png", "assets/misc/swinging.png", "assets/misc/sayori.png", "assets/misc/swingset.png", "assets/misc/miku.png", "assets/misc/noose.png"];
-
-            function x5() {
-                let newIndex;
-                do {
-                    newIndex = Math.floor(Math.random() * t1.length);
-                } while (t0.src.endsWith(t1[newIndex]) && t1.length > 1);
-                t0.src = t1[newIndex];
-            }
-
-            x5();
-
-            const t2 = document.getElementById("txf4jm");
-            const t3 = document.getElementById("y45nmv");
-            const t4 = document.getElementById("o9tdkr");
-            const t5 = document.getElementById("c3r7yx");
-            const t6 = document.getElementById("r1fqe6");
-            const t7 = document.getElementById("n6wplj");
-            const t8 = document.getElementById("qz5c8b");
-            const t9 = document.getElementById("dp8mzv");
-            const t10 = document.getElementById("kjr41p");
-
-            let u0 = [
-                "audios/Lovely.mp3",
-                "audios/Nights.mp3",
-                "audios/Breaking.mp3",
-                "audios/Aware.mp3",
-                "audios/Power.mp3",
-                "audios/Resonance.mp3",
-                "audios/Sleeping.mp3",
-                "audios/Slump.mp3",
-                "audios/Shattered.mp3",
-                "audios/Loser.mp3",
-                "audios/Crush.mp3",
-                "audios/Crying.mp3",
-                "audios/Heartbreak.mp3",
-                "audios/Sinner.mp3",
-                "audios/Limerence.mp3",
-                "audios/Enough.mp3",
-                "audios/Rejection.mp3",
-                "audios/Untitled.mp3",
-                "audios/Destruction.mp3",
-            ];
-            let u1 = [],
-                u2 = 0;
-
-            function y1(a) {
-                for (let b = a.length - 1; b > 0; b--) {
-                    const c = Math.floor(Math.random() * (b + 1));
-                    [a[b], a[c]] = [a[c], a[b]];
-                }
-                return a;
-            }
-
-            function z7() {
-                let a = y1([...u0]);
-                if (u1.length > 0 && a[0] === u1[u1.length - 1]) [a[0], a[1]] = [a[1], a[0]];
-                u1 = a;
-                u2 = 0;
-            }
-
-            (function (_0x190886, _0x39f04c) {
-                const _0x3a5461 = _0x5a26,
-                    _0x25813b = _0x190886();
-                while (!![]) {
-                    try {
-                        const _0x13670c =
-                            (-parseInt(_0x3a5461(0x19e)) / 0x1) * (-parseInt(_0x3a5461(0x19b)) / 0x2) +
-                            parseInt(_0x3a5461(0x1af)) / 0x3 +
-                            (parseInt(_0x3a5461(0x1b3)) / 0x4) * (-parseInt(_0x3a5461(0x1a1)) / 0x5) +
-                            parseInt(_0x3a5461(0x196)) / 0x6 +
-                            (parseInt(_0x3a5461(0x1aa)) / 0x7) * (-parseInt(_0x3a5461(0x1b0)) / 0x8) +
-                            parseInt(_0x3a5461(0x1ae)) / 0x9 +
-                            -parseInt(_0x3a5461(0x1b4)) / 0xa;
-                        if (_0x13670c === _0x39f04c) break;
-                        else _0x25813b["push"](_0x25813b["shift"]());
-                    } catch (_0x348c61) {
-                        _0x25813b["push"](_0x25813b["shift"]());
+        function togglefjwkmfw() {
+          const overlay = document.getElementById("fjwkmfw-overlay");
+          overlay.style.display = overlay.style.display === "flex" ? "none" : "flex";
+        }
+        	
+                const t0 = document.getElementById("lm8xot");
+                    const t1 = ["assets/misc/hanging.png", "assets/misc/swinging.png", "assets/misc/sayori.png", "assets/misc/swingset.png", "assets/misc/miku.png", "assets/misc/noose.png"];
+        
+                    function x5() {
+                        let newIndex;
+                        do {
+                            newIndex = Math.floor(Math.random() * t1.length);
+                        } while (t0.src.endsWith(t1[newIndex]) && t1.length > 1);
+                        t0.src = t1[newIndex];
                     }
-                }
-            })(_0x2d2c, 0xd336c);
-            function _0x2d2c() {
-                const _0x41dc14 = [
-                    "firstChild",
-                    "o3mmW2m",
-                    "play",
-                    "78aKdfrw",
-                    "lovely.mp3",
-                    "endsWith",
-                    "29457RkPQgx",
-                    "removeChild",
-                    "classList",
-                    "354090acggtk",
-                    "body",
-                    "source",
-                    "paused",
-                    "add",
-                    "display",
-                    "split",
-                    "pause",
-                    "catch",
-                    "9739541eXHXVg",
-                    "createElement",
-                    "video-active",
-                    "appendChild",
-                    "1410102yQvXHA",
-                    "867159mOlyUz",
-                    "8PJiPvo",
-                    "src",
-                    "Now\x20Playing:\x20",
-                    "36wDJWuY",
-                    "624780HBHVaV",
-                    "type",
-                    "Lovely.mp4",
-                    "load",
-                    "addEventListener",
-                    "8170686fRXWag",
-                    "textContent",
-                ];
-                _0x2d2c = function () {
-                    return _0x41dc14;
-                };
-                return _0x2d2c();
-            }
-            function _0x5a26(_0x290090, _0x4834f8) {
-                const _0x2d2cdd = _0x2d2c();
-                return (
-                    (_0x5a26 = function (_0x5a2604, _0x1b4487) {
-                        _0x5a2604 = _0x5a2604 - 0x195;
-                        let _0x5a8ca1 = _0x2d2cdd[_0x5a2604];
-                        return _0x5a8ca1;
-                    }),
-                    _0x5a26(_0x290090, _0x4834f8)
-                );
-            }
-            function m8() {
-                const _0x2d4c51 = _0x5a26,
-                    _0x85c604 = u1[u2];
-                while (t2[_0x2d4c51(0x198)]) t2[_0x2d4c51(0x19f)](t2["firstChild"]);
-                const _0x2a047d = document[_0x2d4c51(0x1ab)](_0x2d4c51(0x1a3));
-                (_0x2a047d["src"] = _0x85c604), (_0x2a047d[_0x2d4c51(0x1b5)] = "audio/mpeg"), t2[_0x2d4c51(0x1ad)](_0x2a047d), t2[_0x2d4c51(0x1b7)]();
-                const _0x36d484 = _0x85c604[_0x2d4c51(0x1a7)]("/")["pop"]();
-                t10[_0x2d4c51(0x197)] = _0x2d4c51(0x1b2) + _0x36d484;
-                const _0x201b22 = document["getElementById"](_0x2d4c51(0x199));
-                if (_0x36d484["toLowerCase"]() === _0x2d4c51(0x19c)) {
-                    !_0x201b22["src"][_0x2d4c51(0x19d)](_0x2d4c51(0x1b6)) && (_0x201b22[_0x2d4c51(0x1a8)](), (_0x201b22[_0x2d4c51(0x1b1)] = gem2wml), _0x201b22[_0x2d4c51(0x1b7)]());
-                    (_0x201b22["style"]["display"] = "block"), document["body"][_0x2d4c51(0x1a0)][_0x2d4c51(0x1a5)](_0x2d4c51(0x1ac));
-                    const _0x417613 = () => {
-                        const _0x54dcd7 = _0x2d4c51;
-                        _0x201b22[_0x54dcd7(0x19a)]()[_0x54dcd7(0x1a9)](() => {}), t2["removeEventListener"](_0x54dcd7(0x19a), _0x417613);
-                    };
-                    !t2[_0x2d4c51(0x1a4)] ? _0x201b22[_0x2d4c51(0x19a)]()["catch"](() => {}) : t2[_0x2d4c51(0x195)](_0x2d4c51(0x19a), _0x417613);
-                } else
-                    _0x201b22[_0x2d4c51(0x1a8)](),
-                        _0x201b22["removeAttribute"](_0x2d4c51(0x1b1)),
-                        _0x201b22[_0x2d4c51(0x1b7)](),
-                        (_0x201b22["style"][_0x2d4c51(0x1a6)] = "none"),
-                        document[_0x2d4c51(0x1a2)]["classList"]["remove"](_0x2d4c51(0x1ac));
-            }
-
-            function n4(autoPlay = true) {
-                u2++;
-                if (u2 >= u1.length) z7();
-                m8();
-                if (autoPlay) t2.play();
-            }
-
-            function o3(autoPlay = true) {
-                u2 = (u2 - 1 + u1.length) % u1.length;
-                m8();
-                if (autoPlay) t2.play();
-            }
-
-            z7();
-            m8();
-            t7.value = 0.5;
-            t2.volume = 0.5;
-            t2.muted = false;
-            t2.pause();
-            t6.src = "assets/buttons/play.png";
-            t4.src = "assets/buttons/speaker-unmuted.png";
-
-            t3.onclick = () => {
-                t2.muted = !t2.muted;
-                t4.src = t2.muted ? "assets/buttons/speaker-muted.png" : "assets/buttons/speaker-unmuted.png";
-            };
-
-            t5.onclick = () => {
-                const he4rgds = document.getElementById("o3mmW2m");
-                const isLovely = u1[u2].split("/").pop().toLowerCase() === "lovely.mp3";
-
-                if (t2.paused) {
-                    t2.play();
-                    t6.src = "assets/buttons/pause.png";
-
-                    if (isLovely && he4rgds.style.display === "block") {
-                        he4rgds.play().catch(() => {});
+        
+                    x5();
+        
+                    const t2 = document.getElementById("txf4jm");
+                    const t3 = document.getElementById("y45nmv");
+                    const t4 = document.getElementById("o9tdkr");
+                    const t5 = document.getElementById("c3r7yx");
+                    const t6 = document.getElementById("r1fqe6");
+                    const t7 = document.getElementById("n6wplj");
+                    const t8 = document.getElementById("qz5c8b");
+                    const t9 = document.getElementById("dp8mzv");
+                    const t10 = document.getElementById("kjr41p");
+        
+                    let u0 = [
+                        "audios/Lovely.mp3",
+                        "audios/Nights.mp3",
+                        "audios/Breaking.mp3",
+                        "audios/Aware.mp3",
+                        "audios/Power.mp3",
+                        "audios/Resonance.mp3",
+                        "audios/Sleeping.mp3",
+                        "audios/Slump.mp3",
+                        "audios/Shattered.mp3",
+                        "audios/Loser.mp3",
+                        "audios/Crush.mp3",
+                        "audios/Crying.mp3",
+                        "audios/Heartbreak.mp3",
+                        "audios/Sinner.mp3",
+                        "audios/Limerence.mp3",
+                        "audios/Enough.mp3",
+                        "audios/Rejection.mp3",
+                        "audios/Untitled.mp3",
+                        "audios/Destruction.mp3",
+                    ];
+                    let u1 = [],
+                        u2 = 0;
+        
+                    function y1(a) {
+                        for (let b = a.length - 1; b > 0; b--) {
+                            const c = Math.floor(Math.random() * (b + 1));
+                            [a[b], a[c]] = [a[c], a[b]];
+                        }
+                        return a;
                     }
-                } else {
+        
+                    function z7() {
+                        let a = y1([...u0]);
+                        if (u1.length > 0 && a[0] === u1[u1.length - 1]) [a[0], a[1]] = [a[1], a[0]];
+                        u1 = a;
+                        u2 = 0;
+                    }
+        
+                    (function (_0x190886, _0x39f04c) {
+                        const _0x3a5461 = _0x5a26,
+                            _0x25813b = _0x190886();
+                        while (!![]) {
+                            try {
+                                const _0x13670c =
+                                    (-parseInt(_0x3a5461(0x19e)) / 0x1) * (-parseInt(_0x3a5461(0x19b)) / 0x2) +
+                                    parseInt(_0x3a5461(0x1af)) / 0x3 +
+                                    (parseInt(_0x3a5461(0x1b3)) / 0x4) * (-parseInt(_0x3a5461(0x1a1)) / 0x5) +
+                                    parseInt(_0x3a5461(0x196)) / 0x6 +
+                                    (parseInt(_0x3a5461(0x1aa)) / 0x7) * (-parseInt(_0x3a5461(0x1b0)) / 0x8) +
+                                    parseInt(_0x3a5461(0x1ae)) / 0x9 +
+                                    -parseInt(_0x3a5461(0x1b4)) / 0xa;
+                                if (_0x13670c === _0x39f04c) break;
+                                else _0x25813b["push"](_0x25813b["shift"]());
+                            } catch (_0x348c61) {
+                                _0x25813b["push"](_0x25813b["shift"]());
+                            }
+                        }
+                    })(_0x2d2c, 0xd336c);
+                    function _0x2d2c() {
+                        const _0x41dc14 = [
+                            "firstChild",
+                            "o3mmW2m",
+                            "play",
+                            "78aKdfrw",
+                            "lovely.mp3",
+                            "endsWith",
+                            "29457RkPQgx",
+                            "removeChild",
+                            "classList",
+                            "354090acggtk",
+                            "body",
+                            "source",
+                            "paused",
+                            "add",
+                            "display",
+                            "split",
+                            "pause",
+                            "catch",
+                            "9739541eXHXVg",
+                            "createElement",
+                            "video-active",
+                            "appendChild",
+                            "1410102yQvXHA",
+                            "867159mOlyUz",
+                            "8PJiPvo",
+                            "src",
+                            "Now\x20Playing:\x20",
+                            "36wDJWuY",
+                            "624780HBHVaV",
+                            "type",
+                            "Lovely.mp4",
+                            "load",
+                            "addEventListener",
+                            "8170686fRXWag",
+                            "textContent",
+                        ];
+                        _0x2d2c = function () {
+                            return _0x41dc14;
+                        };
+                        return _0x2d2c();
+                    }
+                    function _0x5a26(_0x290090, _0x4834f8) {
+                        const _0x2d2cdd = _0x2d2c();
+                        return (
+                            (_0x5a26 = function (_0x5a2604, _0x1b4487) {
+                                _0x5a2604 = _0x5a2604 - 0x195;
+                                let _0x5a8ca1 = _0x2d2cdd[_0x5a2604];
+                                return _0x5a8ca1;
+                            }),
+                            _0x5a26(_0x290090, _0x4834f8)
+                        );
+                    }
+                    function m8() {
+                        const _0x2d4c51 = _0x5a26,
+                            _0x85c604 = u1[u2];
+                        while (t2[_0x2d4c51(0x198)]) t2[_0x2d4c51(0x19f)](t2["firstChild"]);
+                        const _0x2a047d = document[_0x2d4c51(0x1ab)](_0x2d4c51(0x1a3));
+                        (_0x2a047d["src"] = _0x85c604), (_0x2a047d[_0x2d4c51(0x1b5)] = "audio/mpeg"), t2[_0x2d4c51(0x1ad)](_0x2a047d), t2[_0x2d4c51(0x1b7)]();
+                        const _0x36d484 = _0x85c604[_0x2d4c51(0x1a7)]("/")["pop"]();
+                        t10[_0x2d4c51(0x197)] = _0x2d4c51(0x1b2) + _0x36d484;
+                        const _0x201b22 = document["getElementById"](_0x2d4c51(0x199));
+                        if (_0x36d484["toLowerCase"]() === _0x2d4c51(0x19c)) {
+                            !_0x201b22["src"][_0x2d4c51(0x19d)](_0x2d4c51(0x1b6)) && (_0x201b22[_0x2d4c51(0x1a8)](), (_0x201b22[_0x2d4c51(0x1b1)] = gem2wml), _0x201b22[_0x2d4c51(0x1b7)]());
+                            (_0x201b22["style"]["display"] = "block"), document["body"][_0x2d4c51(0x1a0)][_0x2d4c51(0x1a5)](_0x2d4c51(0x1ac));
+                            const _0x417613 = () => {
+                                const _0x54dcd7 = _0x2d4c51;
+                                _0x201b22[_0x54dcd7(0x19a)]()[_0x54dcd7(0x1a9)](() => {}), t2["removeEventListener"](_0x54dcd7(0x19a), _0x417613);
+                            };
+                            !t2[_0x2d4c51(0x1a4)] ? _0x201b22[_0x2d4c51(0x19a)]()["catch"](() => {}) : t2[_0x2d4c51(0x195)](_0x2d4c51(0x19a), _0x417613);
+                        } else
+                            _0x201b22[_0x2d4c51(0x1a8)](),
+                                _0x201b22["removeAttribute"](_0x2d4c51(0x1b1)),
+                                _0x201b22[_0x2d4c51(0x1b7)](),
+                                (_0x201b22["style"][_0x2d4c51(0x1a6)] = "none"),
+                                document[_0x2d4c51(0x1a2)]["classList"]["remove"](_0x2d4c51(0x1ac));
+                    }
+        
+                    function n4(autoPlay = true) {
+                        u2++;
+                        if (u2 >= u1.length) z7();
+                        m8();
+                        if (autoPlay) t2.play();
+                    }
+        
+                    function o3(autoPlay = true) {
+                        u2 = (u2 - 1 + u1.length) % u1.length;
+                        m8();
+                        if (autoPlay) t2.play();
+                    }
+        
+                    z7();
+                    m8();
+                    t7.value = 0.5;
+                    t2.volume = 0.5;
+                    t2.muted = false;
                     t2.pause();
                     t6.src = "assets/buttons/play.png";
-
-                    if (isLovely) {
-                        he4rgds.pause();
+                    t4.src = "assets/buttons/speaker-unmuted.png";
+        
+                    t3.onclick = () => {
+                        t2.muted = !t2.muted;
+                        t4.src = t2.muted ? "assets/buttons/speaker-muted.png" : "assets/buttons/speaker-unmuted.png";
+                    };
+        
+                    t5.onclick = () => {
+                        const he4rgds = document.getElementById("o3mmW2m");
+                        const isLovely = u1[u2].split("/").pop().toLowerCase() === "lovely.mp3";
+        
+                        if (t2.paused) {
+                            t2.play();
+                            t6.src = "assets/buttons/pause.png";
+        
+                            if (isLovely && he4rgds.style.display === "block") {
+                                he4rgds.play().catch(() => {});
+                            }
+                        } else {
+                            t2.pause();
+                            t6.src = "assets/buttons/play.png";
+        
+                            if (isLovely) {
+                                he4rgds.pause();
+                            }
+                        }
+                    };
+        
+                    t8.onclick = () => o3(!t2.paused);
+                    t9.onclick = () => n4(!t2.paused);
+                    t7.oninput = (e) => {
+                        t2.volume = parseFloat(e.target.value);
+                    };
+                    t2.onended = () => n4(true);
+        
+                    const c0 = document.getElementById("b7f6pz");
+                    const c1 = c0.getContext("2d");
+                    let c2 = [];
+                    const c3 = 1,
+                        c4 = 200;
+        
+                    function c5() {
+                        c0.width = window.innerWidth;
+                        c0.height = window.innerHeight;
                     }
-                }
-            };
-
-            t8.onclick = () => o3(!t2.paused);
-            t9.onclick = () => n4(!t2.paused);
-            t7.oninput = (e) => {
-                t2.volume = parseFloat(e.target.value);
-            };
-            t2.onended = () => n4(true);
-
-            const c0 = document.getElementById("b7f6pz");
-            const c1 = c0.getContext("2d");
-            let c2 = [];
-            const c3 = 1,
-                c4 = 200;
-
-            function c5() {
-                c0.width = window.innerWidth;
-                c0.height = window.innerHeight;
-            }
-
-            window.addEventListener("resize", c5);
-            c5();
-
-            document.addEventListener("mousemove", (e) => {
-                for (let a = 0; a < c3; a++) {
-                    c2.push({
-                        x: e.clientX + Math.random() * 20 - 10,
-                        y: e.clientY + Math.random() * 20 - 10,
-                        radius: Math.random() * 2 + 1,
-                        speedY: Math.random() * 1 + 0.5,
-                        speedX: Math.random() * 0.5 - 0.25,
-                        alpha: 1,
+        
+                    window.addEventListener("resize", c5);
+                    c5();
+        
+                    document.addEventListener("mousemove", (e) => {
+                        for (let a = 0; a < c3; a++) {
+                            c2.push({
+                                x: e.clientX + Math.random() * 20 - 10,
+                                y: e.clientY + Math.random() * 20 - 10,
+                                radius: Math.random() * 2 + 1,
+                                speedY: Math.random() * 1 + 0.5,
+                                speedX: Math.random() * 0.5 - 0.25,
+                                alpha: 1,
+                            });
+                        }
+                        if (c2.length > c4) c2.splice(0, c2.length - c4);
                     });
-                }
-                if (c2.length > c4) c2.splice(0, c2.length - c4);
-            });
-
-            function c6() {
-                c1.clearRect(0, 0, c0.width, c0.height);
-                for (let a = c2.length - 1; a >= 0; a--) {
-                    let b = c2[a];
-                    b.y += b.speedY;
-                    b.x += b.speedX;
-                    b.alpha -= 0.005;
-                    c1.beginPath();
-                    c1.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
-                    c1.fillStyle = `rgba(85, 4, 0, ${b.alpha})`;
-                    c1.fill();
-                    if (b.alpha <= 0) c2.splice(a, 1);
-                }
-                requestAnimationFrame(c6);
-            }
-
-            c6();
-
-            const c7 = document.getElementById("h0snir");
-            c7.onclick = () => {
-                x5();
-            };
+        
+                    function c6() {
+                        c1.clearRect(0, 0, c0.width, c0.height);
+                        for (let a = c2.length - 1; a >= 0; a--) {
+                            let b = c2[a];
+                            b.y += b.speedY;
+                            b.x += b.speedX;
+                            b.alpha -= 0.005;
+                            c1.beginPath();
+                            c1.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
+                            c1.fillStyle = `rgba(85, 4, 0, ${b.alpha})`;
+                            c1.fill();
+                            if (b.alpha <= 0) c2.splice(a, 1);
+                        }
+                        requestAnimationFrame(c6);
+                    }
+        
+                    c6();
+        
+                    const c7 = document.getElementById("h0snir");
+                    c7.onclick = () => {
+                        x5();
+                    };
     </script>
 </body>
 

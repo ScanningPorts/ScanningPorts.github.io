@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#000000" />
+        <title>endrosity's vault</title>
+        <link rel="icon" type="image/x-icon" href="assets/misc/favi.png" />
+
         <script>
             if (location.protocol === "http:") {
                 location.replace(location.href.replace(/^http:/, "https:"));
@@ -8,146 +14,63 @@
 
             document.addEventListener("contextmenu", (e) => e.preventDefault());
 
-            function _0xcf62(_0x51a436, _0x596374) {
-                const _0xdcaa58 = _0xdcaa();
-                return (
-                    (_0xcf62 = function (_0xcf624c, _0x5e06a3) {
-                        _0xcf624c = _0xcf624c - 0x1d0;
-                        let _0x34bf7e = _0xdcaa58[_0xcf624c];
-                        return _0x34bf7e;
-                    }),
-                    _0xcf62(_0x51a436, _0x596374)
-                );
-            }
-            const _0x5aa662 = _0xcf62;
-            function _0xdcaa() {
-                const _0x5c7127 = [
-                    "addEventListener",
-                    "3nWBmZo",
-                    "552zJHFvk",
-                    "1665gXMjoB",
-                    "preventDefault",
-                    "54525MpwSoe",
-                    "101768epBvKw",
-                    "metaKey",
-                    "keydown",
-                    "stopPropagation",
-                    "10350PYWsjG",
-                    "7dOieJq",
-                    "17061HkATLI",
-                    "key",
-                    "ctrlKey",
-                    "toLowerCase",
-                    "41566FIDlnC",
-                    "1469064FmlYuZ",
-                    "98436ianezX",
-                    "112HntIRg",
-                    "shiftKey",
-                ];
-                _0xdcaa = function () {
-                    return _0x5c7127;
-                };
-                return _0xdcaa();
-            }
-            (function (_0x62673e, _0x6314c3) {
-                const _0x5bb6a7 = _0xcf62,
-                    _0x2272ae = _0x62673e();
-                while (!![]) {
-                    try {
-                        const _0x439e27 =
-                            (-parseInt(_0x5bb6a7(0x1d0)) / 0x1) * (parseInt(_0x5bb6a7(0x1d5)) / 0x2) +
-                            (parseInt(_0x5bb6a7(0x1db)) / 0x3) * (-parseInt(_0x5bb6a7(0x1d7)) / 0x4) +
-                            -parseInt(_0x5bb6a7(0x1df)) / 0x5 +
-                            parseInt(_0x5bb6a7(0x1d6)) / 0x6 +
-                            (-parseInt(_0x5bb6a7(0x1d8)) / 0x7) * (parseInt(_0x5bb6a7(0x1e0)) / 0x8) +
-                            (-parseInt(_0x5bb6a7(0x1dd)) / 0x9) * (-parseInt(_0x5bb6a7(0x1e4)) / 0xa) +
-                            (parseInt(_0x5bb6a7(0x1d1)) / 0xb) * (parseInt(_0x5bb6a7(0x1dc)) / 0xc);
-                        if (_0x439e27 === _0x6314c3) break;
-                        else _0x2272ae["push"](_0x2272ae["shift"]());
-                    } catch (_0x15fcf2) {
-                        _0x2272ae["push"](_0x2272ae["shift"]());
-                    }
-                }
-            })(_0xdcaa, 0x1e0fe),
-                document[_0x5aa662(0x1da)](_0x5aa662(0x1e2), function (_0x15e472) {
-                    const _0x472eed = _0x5aa662,
-                        _0xe2cc15 = _0x15e472[_0x472eed(0x1d2)][_0x472eed(0x1d4)]();
-                    if (
-                        _0xe2cc15 === "f12" ||
-                        (_0x15e472["ctrlKey"] && _0x15e472[_0x472eed(0x1d9)] && (_0xe2cc15 === "i" || _0xe2cc15 === "j" || _0xe2cc15 === "c")) ||
-                        (_0x15e472[_0x472eed(0x1d3)] && _0xe2cc15 === "u") ||
-                        ((_0x15e472[_0x472eed(0x1d3)] || _0x15e472[_0x472eed(0x1e1)]) && _0xe2cc15 === "s")
-                    )
-                        return _0x15e472[_0x472eed(0x1de)](), _0x15e472[_0x472eed(0x1e3)](), alert("Inspection\x20is\x20disabled.\x0aBlehhhh."), ![];
-                });
+            document.addEventListener("keydown", (e) => {
+                const key = e.key.toLowerCase();
+                const isDevtools   = key === "f12";
+                const isInspect    = e.ctrlKey && e.shiftKey && (key === "i" || key === "j" || key === "c");
+                const isViewSource = e.ctrlKey && key === "u";
+                const isSave       = (e.ctrlKey || e.metaKey) && key === "s";
 
-            function _0x537c(_0x38b3a4, _0x5b6ef9) {
-                const _0x354dc9 = _0x354d();
-                return (
-                    (_0x537c = function (_0x537cc6, _0x4089f7) {
-                        _0x537cc6 = _0x537cc6 - 0x186;
-                        let _0x12cc97 = _0x354dc9[_0x537cc6];
-                        return _0x12cc97;
-                    }),
-                    _0x537c(_0x38b3a4, _0x5b6ef9)
-                );
-            }
-            (function (_0x31bd69, _0x58e908) {
-                const _0x1c6120 = _0x537c,
-                    _0xa5fe69 = _0x31bd69();
-                while (!![]) {
-                    try {
-                        const _0x31842a =
-                            (-parseInt(_0x1c6120(0x18b)) / 0x1) * (-parseInt(_0x1c6120(0x186)) / 0x2) +
-                            (-parseInt(_0x1c6120(0x188)) / 0x3) * (parseInt(_0x1c6120(0x18f)) / 0x4) +
-                            (parseInt(_0x1c6120(0x18c)) / 0x5) * (-parseInt(_0x1c6120(0x18d)) / 0x6) +
-                            parseInt(_0x1c6120(0x190)) / 0x7 +
-                            (-parseInt(_0x1c6120(0x18e)) / 0x8) * (-parseInt(_0x1c6120(0x187)) / 0x9) +
-                            -parseInt(_0x1c6120(0x18a)) / 0xa +
-                            parseInt(_0x1c6120(0x189)) / 0xb;
-                        if (_0x31842a === _0x58e908) break;
-                        else _0xa5fe69["push"](_0xa5fe69["shift"]());
-                    } catch (_0x5bc65a) {
-                        _0xa5fe69["push"](_0xa5fe69["shift"]());
-                    }
+                if (isDevtools || isInspect || isViewSource || isSave) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    alert("Inspection is disabled.\nBlehhhh.");
+                    return false;
                 }
-            })(_0x354d, 0x85645),
-                (function ehrer33() {
-                    setInterval(() => {
-                        const _0x1fcc5a = _0x537c,
-                            _0x3ae84c = performance["now"]();
-                        debugger;
-                        const _0x5baadd = performance["now"]();
-                        _0x5baadd - _0x3ae84c > 0x32 && alert(_0x1fcc5a(0x191));
-                    }, 0x96);
-                })();
-            function _0x354d() {
-                const _0x56ac0d = [
-                    "8wHEYmp",
-                    "3062178lNnPEb",
-                    "Inspection\x20is\x20disabled.\x0aBlehhhh.",
-                    "8XYAlEY",
-                    "27AvnXWF",
-                    "753222oTyUwO",
-                    "7969236axCYFz",
-                    "1161940gIrMXi",
-                    "59165VySiag",
-                    "10cDJSJM",
-                    "1925346uqbePI",
-                    "1087752AzrriM",
-                ];
-                _0x354d = function () {
-                    return _0x56ac0d;
-                };
-                return _0x354d();
+            });
+
+            function obliteratePage() {
+                try {
+                    document.documentElement.innerHTML =
+                        '<body style="margin:0;background:#000;color:#fff;font-family:Arial,sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;font-size:1.5em;">Inspection is disabled. Blehhhh.</body>';
+                } catch (_) {}
+                try { window.stop(); } catch (_) {}
+                try { location.replace("about:blank"); } catch (_) {}
             }
 
+            function flagDevtools() {
+                obliteratePage();
+            }
+
+            (function debugTrap() {
+                const start = performance.now();
+                debugger;
+                if (performance.now() - start > 100) flagDevtools();
+                setTimeout(debugTrap, 50);
+            })();
+
+            setInterval(() => {
+                try { Function("debugger;")(); } catch (_) {}
+            }, 50);
+
+            setInterval(() => {
+                const threshold = 160;
+                const widthGap  = window.outerWidth  - window.innerWidth;
+                const heightGap = window.outerHeight - window.innerHeight;
+                if (widthGap > threshold || heightGap > threshold) flagDevtools();
+            }, 500);
+
+            const consoleTrap = /./;
+            consoleTrap.toString = function () {
+                flagDevtools();
+                return "";
+            };
+            setInterval(() => {
+                console.log(consoleTrap);
+                console.clear();
+            }, 500);
         </script>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#000000" />
-        <title>endrosity's vault</title>
-        <link rel="icon" type="image/x-icon" href="assets/misc/favi.png" />
+
         <style>
             html,
             body {
@@ -160,7 +83,30 @@
                 cursor: url("assets/misc/cursor.png"), auto;
             }
 
-            #b7f6pz {
+            #loading-overlay {
+                position: fixed;
+                inset: 0;
+                background: #000;
+                z-index: 99999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                font-family: Arial, sans-serif;
+                font-size: 1.5em;
+                font-weight: bold;
+                text-shadow: 0 0 4px #9916a0, 0 0 12px #9916a0;
+                opacity: 1;
+                transition: opacity 1.75s ease;
+                user-select: none;
+            }
+
+            #loading-overlay.fade-out {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            #particle-canvas {
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -168,22 +114,48 @@
                 z-index: 999;
             }
 
-            .xj2nro {
+            .player {
                 position: fixed;
                 top: 10px;
                 left: 10px;
                 display: flex;
-                align-items: center;
-                gap: 10px;
-                background: rgba(255, 255, 255, 0.1);
-                padding: 6px 10px;
+                flex-direction: column;
+                gap: 8px;
+                background: rgba(255, 255, 255, 0.15);
+                padding: 8px 12px;
                 border-radius: 8px;
                 user-select: none;
                 z-index: 1000;
                 cursor: url("assets/misc/cursor.png"), auto;
+                width: 380px;
+                box-sizing: border-box;
             }
 
-            .fycqbr {
+            .player-controls {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .player-info {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            #track-counter,
+            #track-time {
+                color: #550400;
+                font-weight: bold;
+                font-size: 0.95em;
+                text-shadow: 0 0 3px #550400, 0 0 8px #550400;
+                white-space: nowrap;
+                user-select: none;
+                flex: 0 0 auto;
+            }
+
+            .icon-button {
                 background: transparent;
                 border: none;
                 padding: 0;
@@ -194,7 +166,7 @@
                 user-select: none;
             }
 
-            .fycqbr img {
+            .icon-button img {
                 width: 28px;
                 height: 28px;
                 display: block;
@@ -202,7 +174,7 @@
                 transition: filter 0.3s ease;
             }
 
-            .fycqbr:hover img {
+            .icon-button:hover img {
                 filter: brightness(1.2);
             }
 
@@ -246,16 +218,20 @@
                 background: #b33fc0;
             }
 
-            .k3lqcz {
+            .swinger {
                 position: absolute;
                 top: 0;
                 left: 50%;
                 transform: translateX(-50%);
                 transform-origin: top center;
-                animation: s9otbr 2s ease-in-out infinite alternate;
+                animation: sway 2s ease-in-out infinite alternate;
             }
 
-            .k3lqcz img {
+            .swinger.hidden {
+                display: none;
+            }
+
+            .swinger img {
                 display: block;
                 pointer-events: none;
                 user-select: none;
@@ -263,16 +239,12 @@
                 height: auto;
             }
 
-            @keyframes s9otbr {
-                from {
-                    transform: translateX(-50%) rotate(-3deg);
-                }
-                to {
-                    transform: translateX(-50%) rotate(3deg);
-                }
+            @keyframes sway {
+                from { transform: translateX(-50%) rotate(-3deg); }
+                to   { transform: translateX(-50%) rotate(3deg); }
             }
 
-            .g4hmsx {
+            .signature {
                 position: absolute;
                 bottom: 20px;
                 left: 20px;
@@ -282,7 +254,7 @@
                 text-shadow: 0 0 2px #9916a0, 0 0 4px #9916a0, 0 0 16px #9916a0, 0 0 24px #9916a0;
             }
 
-            .vg5twr {
+            .elsewhere {
                 position: absolute;
                 bottom: 260px;
                 width: 100%;
@@ -291,7 +263,7 @@
                 font-size: 2em;
             }
 
-            .vg5twr a {
+            .elsewhere a {
                 color: white;
                 text-decoration: underline;
                 font-weight: bold;
@@ -301,34 +273,42 @@
                 cursor: url("assets/misc/cursor.png"), auto;
             }
 
-            .vg5twr a:hover {
+            .elsewhere a:hover {
                 transform: scale(1.3);
             }
 
-            #kjr41p {
+            #now-playing {
                 color: #550400;
                 font-weight: bold;
-                text-shadow: 0 0 5px #550400, 0 0 10px #550400;
                 font-size: 1em;
+                text-shadow: 0 0 3px #550400, 0 0 8px #550400;
                 user-select: none;
+                flex: 1 1 auto;
+                min-width: 0;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                padding: 10px 12px;
+                margin: -10px -12px;
             }
 
-            .drmwjv {
+            .reload-bar {
                 position: fixed;
                 top: 10px;
                 right: 10px;
                 display: flex;
-                align-items: center;
-                gap: 8px;
-                background: rgba(255, 255, 255, 0.1);
-                padding: 6px 12px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+                background: rgba(255, 255, 255, 0.15);
+                padding: 8px 12px;
                 border-radius: 8px;
                 user-select: none;
                 z-index: 1001;
                 cursor: url("assets/misc/cursor.png"), auto;
             }
 
-            .xpnlyf {
+            .reload-button {
                 background: transparent;
                 border: none;
                 padding: 0;
@@ -341,9 +321,10 @@
                 align-items: center;
                 gap: 10px;
                 text-shadow: 0 0 2px #550400, 0 0 4px #550400, 0 0 16px #550400, 0 0 24px #550400;
+                width: 160px;
             }
 
-            .xpnlyf img {
+            .reload-button img {
                 width: 24px;
                 height: 24px;
                 pointer-events: none;
@@ -364,16 +345,16 @@
                 display: none !important;
             }
 
-            #o3mmW2m {
+            #bg-video {
                 opacity: 0;
                 transition: opacity 0.5s ease;
             }
 
-            body.video-active #o3mmW2m {
+            body.video-active #bg-video {
                 opacity: 1;
             }
 
-            .fjwkmfw-button {
+            .credits-button {
                 position: fixed;
                 bottom: 20px;
                 right: 20px;
@@ -386,11 +367,12 @@
                 z-index: 1000;
                 transition: transform 0.2s ease;
             }
-            .fjwkmfw-button:hover {
+
+            .credits-button:hover {
                 transform: scale(1.1);
             }
 
-            #fjwkmfw-overlay {
+            #credits-overlay {
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -403,7 +385,7 @@
                 justify-content: center;
             }
 
-            .fjwkmfw-content {
+            .credits-content {
                 background-color: rgba(0, 0, 0, 0.2);
                 border: 2px solid #9916a0;
                 padding: 20px 40px;
@@ -415,7 +397,7 @@
                 text-shadow: 0 0 2px #fff;
             }
 
-            .fjwkmfw-content .highlight {
+            .credits-content .highlight {
                 color: #fff;
                 font-weight: bold;
                 text-shadow: 0 0 2px #9916a0, 0 0 6px #9916a0;
@@ -423,10 +405,10 @@
                 text-decoration: none;
             }
 
-            .fjwkmfw-content .highlight:hover {
+            .credits-content .highlight:hover {
                 text-decoration: underline;
             }
-			
+
             .top-image {
                 width: 150px;
                 height: auto;
@@ -435,17 +417,20 @@
     </head>
 
     <body>
+        <div id="loading-overlay">
+            <span id="loading-progress">Loading 0% (0.00s)</span>
+        </div>
+
         <noscript>
             <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: black; color: white; display: flex; align-items: center; justify-content: center; z-index: 9999; font-size: 1.5em;">
                 Please enable JavaScript to continue, you fat retard. Kill yourself.
             </div>
         </noscript>
-        <canvas id="b7f6pz"></canvas>
+
+        <canvas id="particle-canvas"></canvas>
 
         <video
-            id="o3mmW2m"
-            muted
-            loop
+            id="bg-video"
             playsinline
             preload="auto"
             disablepictureinpicture
@@ -453,333 +438,516 @@
             style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;"
         ></video>
 
-        <div class="xj2nro">
-            <button id="y45nmv" class="fycqbr">
-                <img id="o9tdkr" src="assets/buttons/speaker-muted.png" />
-            </button>
-            <input type="range" id="n6wplj" min="0" max="1" step="0.01" value="0.5" />
-            <button id="qz5c8b" class="fycqbr">
-                <img src="assets/buttons/skip-back.png" />
-            </button>
-            <button id="c3r7yx" class="fycqbr">
-                <img id="r1fqe6" src="assets/buttons/play.png" />
-            </button>
-            <button id="dp8mzv" class="fycqbr">
-                <img src="assets/buttons/skip-forward.png" />
-            </button>
-            <span id="kjr41p"></span>
-        </div>
+        <video id="bg-video-prefetch" muted playsinline preload="auto" style="display:none"></video>
 
-        <div class="k3lqcz">
-            <img id="lm8xot" src="" />
-        </div>
-
-        <div class="vg5twr">
-            <a href="https://wound.lol/0" target="_blank">Find me elsewhere</a>
-        </div>
-
-        <div class="fjwkmfw-button" onclick="togglefjwkmfw()">?</div>
-
-        <div id="fjwkmfw-overlay" onclick="togglefjwkmfw()">
-            <div class="fjwkmfw-content" onclick="event.stopPropagation()">
-                <p>Made by <a href="https://wound.lol/god" target="_blank" class="highlight">@god</a></p>
-				<img src="assets/misc/god.png" class="top-image" />
+        <div class="player">
+            <div class="player-controls">
+                <button id="mute-btn" class="icon-button">
+                    <img id="mute-icon" src="assets/buttons/speaker-muted.png" />
+                </button>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5" />
+                <button id="prev-btn" class="icon-button">
+                    <img src="assets/buttons/skip-back.png" />
+                </button>
+                <button id="play-btn" class="icon-button">
+                    <img id="play-icon" src="assets/buttons/play.png" />
+                </button>
+                <button id="next-btn" class="icon-button">
+                    <img src="assets/buttons/skip-forward.png" />
+                </button>
+                <button id="shuffle-btn" class="icon-button">
+                    <img id="shuffle-icon" src="assets/buttons/shuffle.png" />
+                </button>
+            </div>
+            <div class="player-info">
+                <span id="now-playing"></span>
+                <span id="track-time">0:00 | 0:00</span>
+                <span id="track-counter">Track: 0 / 0</span>
             </div>
         </div>
 
-        <div class="g4hmsx">endrosity</div>
+        <div class="swinger">
+            <img id="swinger-image" src="" />
+        </div>
 
-        <audio id="txf4jm"></audio>
+        <div class="elsewhere">
+            <a href="https://emogir.ls/cute" target="_blank">Find me elsewhere</a>
+        </div>
 
-        <div class="drmwjv">
-            <button id="h0snir" class="xpnlyf">
+        <div class="credits-button" id="credits-toggle">?</div>
+
+        <div id="credits-overlay">
+            <div class="credits-content" id="credits-content">
+                <p>Made by <a href="https://guns.lol/kunt" target="_blank" class="highlight">@kunt</a></p>
+                <img src="assets/misc/kunt.png" class="top-image" />
+            </div>
+        </div>
+
+        <div class="signature">endrosity</div>
+
+        <div class="reload-bar">
+            <button id="reload-btn" class="reload-button">
                 <img src="assets/buttons/reload.png" />
                 <span>Reload Image</span>
+            </button>
+            <button id="swinger-toggle-btn" class="reload-button">
+                <img id="swinger-toggle-icon" src="assets/buttons/on.png" />
+                <span id="swinger-toggle-label">Disable Image</span>
             </button>
         </div>
 
         <script>
-            function togglefjwkmfw() {
-                const overlay = document.getElementById("fjwkmfw-overlay");
-                overlay.style.display = overlay.style.display === "flex" ? "none" : "flex";
-            }
+            const loadingOverlay  = document.getElementById("loading-overlay");
+            const loadingProgress = document.getElementById("loading-progress");
 
-            const t0 = document.getElementById("lm8xot");
-            const t1 = ["assets/misc/hanging.png", "assets/misc/swinging.png", "assets/misc/sayori.png", "assets/misc/swingset.png", "assets/misc/miku.png", "assets/misc/noose.png"];
-
-            function x5() {
-                let newIndex;
-                do {
-                    newIndex = Math.floor(Math.random() * t1.length);
-                } while (t0.src.endsWith(t1[newIndex]) && t1.length > 1);
-                t0.src = t1[newIndex];
-            }
-
-            x5();
-
-            const t2 = document.getElementById("txf4jm");
-            const t3 = document.getElementById("y45nmv");
-            const t4 = document.getElementById("o9tdkr");
-            const t5 = document.getElementById("c3r7yx");
-            const t6 = document.getElementById("r1fqe6");
-            const t7 = document.getElementById("n6wplj");
-            const t8 = document.getElementById("qz5c8b");
-            const t9 = document.getElementById("dp8mzv");
-            const t10 = document.getElementById("kjr41p");
-
-            const videoMap = {
-                "Lovely.mp3": "assets/videos/Lovely.mp4",
-                "Destruction.mp3": "assets/videos/Destruction.mp4",
-				"Nights.mp3": "assets/videos/Nights.mp4",
-				"Rejection.mp3": "assets/videos/Rejection.mp4",
-				"Untitled.mp3": "assets/videos/Untitled.mp4",
-				"Power.mp3": "assets/videos/Power.mp4",
-				"Sleeping.mp3": "assets/videos/Sleeping.mp4",
-				"Resonance.mp3": "assets/videos/Resonance.mp4",
-				"Slump.mp3": "assets/videos/Slump.mp4",
-				"Crush.mp3": "assets/videos/Crush.mp4",
-				"Heartbreak.mp3": "assets/videos/Heartbreak.mp4",
-				"Enough.mp3": "assets/videos/Enough.mp4",
-				"Shattered.mp3": "assets/videos/Shattered.mp4",
-				"Crying.mp3": "assets/videos/Crying.mp4",
-				"Sinner.mp3": "assets/videos/Sinner.mp4",
-				"Loser.mp3": "assets/videos/Loser.mp4",
-				"Limerence.mp3": "assets/videos/Limerence.mp4",
-				"Aware.mp3": "assets/videos/Aware.mp4",
-				"Breaking.mp3": "assets/videos/Breaking.mp4",
-				"Endless.mp3": "assets/videos/Endless.mp4",
-            };
-
-            let u0 = [
-                "assets/audios/Aware.mp3",
-                "assets/audios/Breaking.mp3",
-                "assets/audios/Crush.mp3",
-                "assets/audios/Crying.mp3",
-                "assets/audios/Destruction.mp3",
-                "assets/audios/Enough.mp3",
-                "assets/audios/Heartbreak.mp3",
-                "assets/audios/Limerence.mp3",
-                "assets/audios/Loser.mp3",
-                "assets/audios/Lovely.mp3",
-                "assets/audios/Nights.mp3",
-                "assets/audios/Power.mp3",
-                "assets/audios/Rejection.mp3",
-                "assets/audios/Resonance.mp3",
-                "assets/audios/Shattered.mp3",
-                "assets/audios/Sinner.mp3",
-                "assets/audios/Sleeping.mp3",
-                "assets/audios/Slump.mp3",
-                "assets/audios/Untitled.mp3",
-				"assets/audios/Endless.mp3",
+            const trackNames = [
+                "Aware", "Breaking", "Confined", "Crush", "Crying", "Destruction",
+                "Enough", "Heartbreak", "Limerence", "Loser",
+                "Lovely", "Lost", "Nights", "Power", "Rejection", "Resonance",
+                "Scared", "Shattered", "Sinner", "Sleeping", "Slump",
+                "Therapy", "Undermined", "Untitled",
             ];
-            let u1 = [],
-                u2 = 0;
+            const videoPath = (name) => `assets/videos/${name}.mp4`;
+            const playlist  = trackNames.map(videoPath);
 
-            function y1(a) {
-                for (let b = a.length - 1; b > 0; b--) {
-                    const c = Math.floor(Math.random() * (b + 1));
-                    [a[b], a[c]] = [a[c], a[b]];
-                }
-                return a;
+            const staticAssets = [
+                "assets/buttons/play.png",
+                "assets/buttons/pause.png",
+                "assets/buttons/skip-back.png",
+                "assets/buttons/skip-forward.png",
+                "assets/buttons/speaker-muted.png",
+                "assets/buttons/speaker-unmuted.png",
+                "assets/buttons/reload.png",
+                "assets/buttons/shuffle.png",
+                "assets/buttons/noshuffle.png",
+                "assets/buttons/on.png",
+                "assets/buttons/off.png",
+                "assets/misc/cursor.png",
+                "assets/misc/favi.png",
+                "assets/misc/kunt.png",
+                "assets/misc/hanging.png",
+                "assets/misc/swinging.png",
+                "assets/misc/sayori.png",
+                "assets/misc/swingset.png",
+                "assets/misc/miku.png",
+                "assets/misc/noose.png",
+            ];
+
+            const TOTAL_STEPS  = staticAssets.length + playlist.length + 1;
+            const loadStart    = performance.now();
+            let   stepsDone    = 0;
+            let   overlayDone  = false;
+
+            function refreshProgressLabel() {
+                const pct     = Math.min(100, Math.round((stepsDone / TOTAL_STEPS) * 100));
+                const elapsed = ((performance.now() - loadStart) / 1000).toFixed(2);
+                loadingProgress.textContent = `Loading ${pct}% (${elapsed}s)`;
             }
 
-            function z7() {
-                let a = y1([...u0]);
-                if (u1.length > 0 && a[0] === u1[u1.length - 1]) [a[0], a[1]] = [a[1], a[0]];
-                u1 = a;
-                u2 = 0;
+            function bumpProgress() {
+                stepsDone++;
+                refreshProgressLabel();
+                if (stepsDone >= TOTAL_STEPS) finishLoading();
             }
 
-            (function (_0x190886, _0x39f04c) {
-                const _0x3a5461 = _0x5a26,
-                    _0x25813b = _0x190886();
-                while (!![]) {
-                    try {
-                        const _0x13670c =
-                            (-parseInt(_0x3a5461(0x19e)) / 0x1) * (-parseInt(_0x3a5461(0x19b)) / 0x2) +
-                            parseInt(_0x3a5461(0x1af)) / 0x3 +
-                            (parseInt(_0x3a5461(0x1b3)) / 0x4) * (-parseInt(_0x3a5461(0x1a1)) / 0x5) +
-                            parseInt(_0x3a5461(0x196)) / 0x6 +
-                            (parseInt(_0x3a5461(0x1aa)) / 0x7) * (-parseInt(_0x3a5461(0x1b0)) / 0x8) +
-                            parseInt(_0x3a5461(0x1ae)) / 0x9 +
-                            -parseInt(_0x3a5461(0x1b4)) / 0xa;
-                        if (_0x13670c === _0x39f04c) break;
-                        else _0x25813b["push"](_0x25813b["shift"]());
-                    } catch (_0x348c61) {
-                        _0x25813b["push"](_0x25813b["shift"]());
-                    }
-                }
-            })(_0x2d2c, 0xd336c);
-            function _0x2d2c() {
-                const _0x41dc14 = [
-                    "firstChild",
-                    "o3mmW2m",
-                    "play",
-                    "78aKdfrw",
-                    "lovely.mp3",
-                    "endsWith",
-                    "29457RkPQgx",
-                    "removeChild",
-                    "classList",
-                    "354090acggtk",
-                    "body",
-                    "source",
-                    "paused",
-                    "add",
-                    "display",
-                    "split",
-                    "pause",
-                    "catch",
-                    "9739541eXHXVg",
-                    "createElement",
-                    "video-active",
-                    "appendChild",
-                    "1410102yQvXHA",
-                    "867159mOlyUz",
-                    "8PJiPvo",
-                    "src",
-                    "Now\x20Playing:\x20",
-                    "36wDJWuY",
-                    "624780HBHVaV",
-                    "type",
-                    "Lovely.mp4",
-                    "load",
-                    "addEventListener",
-                    "8170686fRXWag",
-                    "textContent",
-                ];
-                _0x2d2c = function () {
-                    return _0x41dc14;
+            function finishLoading() {
+                if (overlayDone) return;
+                overlayDone = true;
+                refreshProgressLabel();
+                loadingOverlay.classList.add("fade-out");
+                setTimeout(() => loadingOverlay.remove(), 1750);
+            }
+
+            const tickTimer = setInterval(() => {
+                if (overlayDone) { clearInterval(tickTimer); return; }
+                refreshProgressLabel();
+            }, 80);
+
+            setTimeout(finishLoading, 15000);
+
+            staticAssets.forEach((src) => {
+                const img = new Image();
+                const done = () => bumpProgress();
+                img.onload  = done;
+                img.onerror = done;
+                img.src = src;
+            });
+
+            const creditsOverlay = document.getElementById("credits-overlay");
+            const creditsContent = document.getElementById("credits-content");
+
+            function toggleCredits() {
+                creditsOverlay.style.display = creditsOverlay.style.display === "flex" ? "none" : "flex";
+            }
+
+            document.getElementById("credits-toggle").addEventListener("click", toggleCredits);
+            creditsOverlay.addEventListener("click", toggleCredits);
+            creditsContent.addEventListener("click", (e) => e.stopPropagation());
+
+            const swingerImage = document.getElementById("swinger-image");
+            const swingerOptions = [
+                "assets/misc/hanging.png",
+                "assets/misc/swinging.png",
+                "assets/misc/sayori.png",
+                "assets/misc/swingset.png",
+                "assets/misc/miku.png",
+                "assets/misc/noose.png",
+            ];
+
+            function pickRandomSwinger() {
+                let next;
+                do {
+                    next = swingerOptions[Math.floor(Math.random() * swingerOptions.length)];
+                } while (swingerImage.src.endsWith(next) && swingerOptions.length > 1);
+                swingerImage.src = next;
+            }
+
+            const initialSwingerExclusions = ["sayori.png", "noose.png", "hanging.png"];
+            const initialSwingerPool = swingerOptions.filter(
+                (src) => !initialSwingerExclusions.some((bad) => src.endsWith(bad))
+            );
+            swingerImage.src = initialSwingerPool[Math.floor(Math.random() * initialSwingerPool.length)];
+
+            document.getElementById("reload-btn").addEventListener("click", pickRandomSwinger);
+
+            const swingerContainer  = document.querySelector(".swinger");
+            const swingerToggleBtn  = document.getElementById("swinger-toggle-btn");
+            const swingerToggleLbl  = document.getElementById("swinger-toggle-label");
+            const swingerToggleIcon = document.getElementById("swinger-toggle-icon");
+            let swingerVisible = true;
+            swingerToggleBtn.addEventListener("click", () => {
+                swingerVisible = !swingerVisible;
+                swingerContainer.classList.toggle("hidden", !swingerVisible);
+                swingerToggleLbl.textContent  = swingerVisible ? "Disable Image" : "Enable Image";
+                swingerToggleIcon.src         = swingerVisible
+                    ? "assets/buttons/on.png"
+                    : "assets/buttons/off.png";
+            });
+
+            const konamiSequence = [
+                "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
+                "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight",
+                "b", "a",
+            ];
+            let konamiIndex = 0;
+            const konamiAudio = new Audio("assets/misc/kc.mp3");
+            konamiAudio.preload = "auto";
+
+            let konamiAudioUnlocked = false;
+            function tryUnlockKonamiAudio() {
+                if (konamiAudioUnlocked) return;
+                const p = konamiAudio.play();
+                const settle = () => {
+                    konamiAudio.pause();
+                    konamiAudio.currentTime = 0;
+                    konamiAudioUnlocked = true;
+                    document.removeEventListener("keydown",     tryUnlockKonamiAudio, true);
+                    document.removeEventListener("click",       tryUnlockKonamiAudio, true);
+                    document.removeEventListener("pointerdown", tryUnlockKonamiAudio, true);
                 };
-                return _0x2d2c();
+                if (p && typeof p.then === "function") {
+                    p.then(settle).catch(() => {});
+                } else {
+                    settle();
+                }
             }
-            function _0x5a26(_0x290090, _0x4834f8) {
-                const _0x2d2cdd = _0x2d2c();
-                return (
-                    (_0x5a26 = function (_0x5a2604, _0x1b4487) {
-                        _0x5a2604 = _0x5a2604 - 0x195;
-                        let _0x5a8ca1 = _0x2d2cdd[_0x5a2604];
-                        return _0x5a8ca1;
-                    }),
-                    _0x5a26(_0x290090, _0x4834f8)
-                );
-            }
+            document.addEventListener("keydown",     tryUnlockKonamiAudio, true);
+            document.addEventListener("click",       tryUnlockKonamiAudio, true);
+            document.addEventListener("pointerdown", tryUnlockKonamiAudio, true);
 
-            function m8() {
-                const gg4k4kd = u1[u2];
-                while (t2.firstChild) t2.removeChild(t2.firstChild);
-
-                const gjwg3gj = document.createElement("source");
-                gjwg3gj.src = gg4k4kd;
-                gjwg3gj.type = "audio/mpeg";
-                t2.appendChild(gjwg3gj);
-                t2.load();
-
-                const e3tkige = gg4k4kd.split("/").pop();
-                t10.textContent = "Now Playing: " + e3tkige;
-
-                const ejrhd4 = document.getElementById("o3mmW2m");
-                const g3njsd = videoMap[e3tkige];
-
-                if (g3njsd) {
-                    if (ejrhd4.src !== g3njsd) {
-                        ejrhd4.pause();
-                        ejrhd4.src = g3njsd;
-                        ejrhd4.load();
-                    }
-
-                    ejrhd4.style.display = "block";
-                    document.body.classList.add("video-active");
-
-                    const hreh4r = () => ejrhd4.play().catch(() => {});
-                    const kf4yfh = () => ejrhd4.pause();
-
-                    t2.removeEventListener("play", hreh4r);
-                    t2.removeEventListener("pause", kf4yfh);
-
-                    t2.addEventListener("play", hreh4r);
-                    t2.addEventListener("pause", kf4yfh);
-
-                    if (!t2.paused) {
-                        ejrhd4.play().catch(() => {});
-                    } else {
-                        ejrhd4.pause();
+            document.addEventListener("keydown", (e) => {
+                const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+                if (k === konamiSequence[konamiIndex]) {
+                    konamiIndex++;
+                    if (konamiIndex === konamiSequence.length) {
+                        swingerImage.src = "assets/misc/ee.png";
+                        konamiAudio.currentTime = 0;
+                        konamiAudio.play().catch(() => {});
+                        konamiIndex = 0;
                     }
                 } else {
-                    ejrhd4.pause();
-                    ejrhd4.removeAttribute("src");
-                    ejrhd4.load();
-                    ejrhd4.style.display = "none";
-                    document.body.classList.remove("video-active");
+                    konamiIndex = (k === konamiSequence[0]) ? 1 : 0;
+                }
+            });
 
-                    t2.removeEventListener("play", () => {});
-                    t2.removeEventListener("pause", () => {});
+            const bgVideo      = document.getElementById("bg-video");
+            const bgPrefetch   = document.getElementById("bg-video-prefetch");
+            const muteBtn      = document.getElementById("mute-btn");
+            const muteIcon     = document.getElementById("mute-icon");
+            const playBtn      = document.getElementById("play-btn");
+            const playIcon     = document.getElementById("play-icon");
+            const volumeInput  = document.getElementById("volume");
+            const prevBtn      = document.getElementById("prev-btn");
+            const nextBtn      = document.getElementById("next-btn");
+            const shuffleBtn   = document.getElementById("shuffle-btn");
+            const shuffleIcon  = document.getElementById("shuffle-icon");
+            const nowPlaying   = document.getElementById("now-playing");
+            const trackCounter = document.getElementById("track-counter");
+            const trackTime    = document.getElementById("track-time");
+
+            function formatTime(seconds) {
+                if (!isFinite(seconds) || seconds < 0) return "0:00";
+                const m = Math.floor(seconds / 60);
+                const s = Math.floor(seconds % 60).toString().padStart(2, "0");
+                return `${m}:${s}`;
+            }
+            function updateTrackTime() {
+                trackTime.textContent = `${formatTime(bgVideo.currentTime)} | ${formatTime(bgVideo.duration)}`;
+            }
+
+            let shuffled        = [];
+            let cursor          = 0;
+            let loadToken       = 0;
+            let initialMediaCounted = false;
+            let shuffleEnabled  = false;
+
+            function shuffleInPlace(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            function buildQueue() {
+                shuffled = shuffleEnabled
+                    ? shuffleInPlace([...playlist])
+                    : [...playlist];
+            }
+
+            function rebuildQueueAfterEnd(prevLastUrl) {
+                buildQueue();
+                if (shuffleEnabled && shuffled.length > 1 && shuffled[0] === prevLastUrl) {
+                    [shuffled[0], shuffled[1]] = [shuffled[1], shuffled[0]];
                 }
             }
 
-            function n4(autoPlay = true) {
-                u2++;
-                if (u2 >= u1.length) z7();
-                m8();
-                if (autoPlay) t2.play();
+            function waitForReady(media) {
+                if (media.readyState >= 4) return Promise.resolve(true);
+                return new Promise((resolve) => {
+                    const cleanup = () => {
+                        media.removeEventListener("canplaythrough", onReady);
+                        media.removeEventListener("error",         onError);
+                    };
+                    const onReady = () => { cleanup(); resolve(true);  };
+                    const onError = () => { cleanup(); resolve(false); };
+                    media.addEventListener("canplaythrough", onReady, { once: true });
+                    media.addEventListener("error",          onError, { once: true });
+                });
             }
 
-            function o3(autoPlay = true) {
-                u2 = (u2 - 1 + u1.length) % u1.length;
-                m8();
-                if (autoPlay) t2.play();
-            }
-
-            z7();
-            m8();
-            t7.value = 0.5;
-            t2.volume = 0.5;
-            t2.muted = false;
-            t2.pause();
-            t6.src = "assets/buttons/play.png";
-            t4.src = "assets/buttons/speaker-unmuted.png";
-
-            t3.onclick = () => {
-                t2.muted = !t2.muted;
-                t4.src = t2.muted ? "assets/buttons/speaker-muted.png" : "assets/buttons/speaker-unmuted.png";
-            };
-
-            t5.onclick = () => {
-                if (t2.paused) {
-                    t2.play();
-                    t6.src = "assets/buttons/pause.png";
-
-                } else {
-                    t2.pause();
-                    t6.src = "assets/buttons/play.png";
-
+            function removeTrackFromQueue(url) {
+                const idx = shuffled.indexOf(url);
+                if (idx >= 0) {
+                    shuffled.splice(idx, 1);
+                    if (cursor > idx) cursor--;
                 }
-            };
-
-            t8.onclick = () => o3(!t2.paused);
-            t9.onclick = () => n4(!t2.paused);
-            t7.oninput = (e) => {
-                t2.volume = parseFloat(e.target.value);
-            };
-            t2.onended = () => n4(true);
-
-            const c0 = document.getElementById("b7f6pz");
-            const c1 = c0.getContext("2d");
-            let c2 = [];
-            const c3 = 1,
-                c4 = 200;
-
-            function c5() {
-                c0.width = window.innerWidth;
-                c0.height = window.innerHeight;
+                const plIdx = playlist.indexOf(url);
+                if (plIdx >= 0) playlist.splice(plIdx, 1);
             }
 
-            window.addEventListener("resize", c5);
-            c5();
+            bgVideo.addEventListener("play",  () => { playIcon.src = "assets/buttons/pause.png"; });
+            bgVideo.addEventListener("pause", () => { playIcon.src = "assets/buttons/play.png";  });
+
+            function prefetchNextVideo() {
+                if (shuffled.length < 2) return;
+                const nextIndex = (cursor + 1) % shuffled.length;
+                const nextSrc   = shuffled[nextIndex];
+                if (!bgPrefetch.src.endsWith(nextSrc)) {
+                    bgPrefetch.src = nextSrc;
+                    bgPrefetch.load();
+                }
+            }
+
+            async function loadCurrentTrack({ autoPlay } = { autoPlay: false }) {
+                if (shuffled.length === 0) {
+                    nowPlaying.textContent   = "No playable tracks";
+                    trackCounter.textContent = "Track: 0 / 0";
+                    return;
+                }
+
+                const myToken   = ++loadToken;
+                const trackUrl  = shuffled[cursor];
+                const fileName  = trackUrl.split("/").pop();
+
+                bgVideo.pause();
+
+                if (!bgVideo.src.endsWith(trackUrl)) {
+                    bgVideo.src = trackUrl;
+                    bgVideo.load();
+                }
+
+                prefetchNextVideo();
+
+                nowPlaying.textContent   = "Now Playing: " + fileName;
+                trackCounter.textContent = `Track: ${cursor + 1} / ${shuffled.length}`;
+                bgVideo.style.display    = "block";
+                document.body.classList.add("video-active");
+
+                const ok = await waitForReady(bgVideo);
+                if (myToken !== loadToken) return;
+
+                if (!ok || bgVideo.error) {
+                    removeTrackFromQueue(trackUrl);
+                    if (shuffled.length === 0) {
+                        nowPlaying.textContent   = "No playable tracks";
+                        trackCounter.textContent = "Track: 0 / 0";
+                        return;
+                    }
+                    if (cursor >= shuffled.length) cursor = 0;
+                    return loadCurrentTrack({ autoPlay });
+                }
+
+                if (!initialMediaCounted) {
+                    initialMediaCounted = true;
+                    bumpProgress();
+                }
+
+                try { bgVideo.currentTime = 0; } catch (_) {}
+
+                if (autoPlay) {
+                    await bgVideo.play().catch(() => {});
+                }
+            }
+
+            async function nextTrack(autoPlay = true) {
+                cursor++;
+                if (cursor >= shuffled.length) {
+                    const prevLast = shuffled[shuffled.length - 1];
+                    rebuildQueueAfterEnd(prevLast);
+                    cursor = 0;
+                }
+                await loadCurrentTrack({ autoPlay });
+            }
+
+            async function prevTrack(autoPlay = true) {
+                cursor = (cursor - 1 + shuffled.length) % shuffled.length;
+                await loadCurrentTrack({ autoPlay });
+            }
+
+            bgVideo.volume    = 0.5;
+            bgVideo.muted     = false;
+            volumeInput.value = 0.5;
+            playIcon.src      = "assets/buttons/play.png";
+            muteIcon.src      = "assets/buttons/speaker-unmuted.png";
+            shuffleIcon.src   = shuffleEnabled
+                ? "assets/buttons/shuffle.png"
+                : "assets/buttons/noshuffle.png";
+
+            function probeViaVideo(url) {
+                return new Promise((resolve) => {
+                    const v = document.createElement("video");
+                    v.preload = "metadata";
+                    v.muted   = true;
+                    let settled = false;
+                    const finish = (ok) => {
+                        if (settled) return;
+                        settled = true;
+                        clearTimeout(timer);
+                        try { v.removeAttribute("src"); v.load(); } catch (_) {}
+                        resolve(ok);
+                    };
+                    v.addEventListener("loadedmetadata", () => finish(true),  { once: true });
+                    v.addEventListener("error",          () => finish(false), { once: true });
+                    const timer = setTimeout(() => finish(false), 10000);
+                    v.src = url;
+                });
+            }
+
+            async function probeOne(url) {
+                if (location.protocol !== "file:") {
+                    try {
+                        const r = await fetch(url, { method: "HEAD" });
+                        if (r.ok)              return true;
+                        if (r.status === 404)  return false;
+                    } catch (_) {}
+                }
+                return probeViaVideo(url);
+            }
+
+            async function probePlaylist() {
+                const probes = playlist.map(async (url) => {
+                    const ok = await probeOne(url);
+                    bumpProgress();
+                    return ok ? url : null;
+                });
+                return (await Promise.all(probes)).filter(Boolean);
+            }
+
+            (async () => {
+                const available = await probePlaylist();
+                playlist.length = 0;
+                playlist.push(...available);
+                buildQueue();
+                if (playlist.length === 0) {
+                    nowPlaying.textContent   = "No playable tracks";
+                    trackCounter.textContent = "Track: 0 / 0";
+                    bumpProgress();
+                    return;
+                }
+                loadCurrentTrack({ autoPlay: false });
+            })();
+
+            shuffleBtn.addEventListener("click", () => {
+                shuffleEnabled = !shuffleEnabled;
+                shuffleIcon.src = shuffleEnabled
+                    ? "assets/buttons/shuffle.png"
+                    : "assets/buttons/noshuffle.png";
+            });
+
+            muteBtn.addEventListener("click", () => {
+                bgVideo.muted = !bgVideo.muted;
+                muteIcon.src = bgVideo.muted
+                    ? "assets/buttons/speaker-muted.png"
+                    : "assets/buttons/speaker-unmuted.png";
+            });
+
+            playBtn.addEventListener("click", () => {
+                if (bgVideo.paused) bgVideo.play();
+                else                bgVideo.pause();
+            });
+
+            nextBtn.addEventListener("click", () => nextTrack(!bgVideo.paused));
+
+            prevBtn.addEventListener("click", async () => {
+                if (bgVideo.currentTime > 5) {
+                    const wasPlaying = !bgVideo.paused;
+                    bgVideo.pause();
+                    try { bgVideo.currentTime = 0; } catch (_) {}
+                    await waitForReady(bgVideo);
+                    if (wasPlaying) {
+                        await bgVideo.play().catch(() => {});
+                    }
+                } else {
+                    prevTrack(!bgVideo.paused);
+                }
+            });
+
+            volumeInput.addEventListener("input", (e) => {
+                bgVideo.volume = parseFloat(e.target.value);
+            });
+
+            bgVideo.addEventListener("ended", () => nextTrack(true));
+            bgVideo.addEventListener("timeupdate",     updateTrackTime);
+            bgVideo.addEventListener("loadedmetadata", updateTrackTime);
+            bgVideo.addEventListener("durationchange", updateTrackTime);
+
+            const canvas = document.getElementById("particle-canvas");
+            const ctx    = canvas.getContext("2d");
+            const particles = [];
+            const PARTICLES_PER_MOVE = 1;
+            const MAX_PARTICLES      = 200;
+
+            function resizeCanvas() {
+                canvas.width  = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener("resize", resizeCanvas);
+            resizeCanvas();
 
             document.addEventListener("mousemove", (e) => {
-                for (let a = 0; a < c3; a++) {
-                    c2.push({
+                for (let i = 0; i < PARTICLES_PER_MOVE; i++) {
+                    particles.push({
                         x: e.clientX + Math.random() * 20 - 10,
                         y: e.clientY + Math.random() * 20 - 10,
                         radius: Math.random() * 2 + 1,
@@ -788,34 +956,27 @@
                         alpha: 1,
                     });
                 }
-                if (c2.length > c4) c2.splice(0, c2.length - c4);
+                if (particles.length > MAX_PARTICLES) {
+                    particles.splice(0, particles.length - MAX_PARTICLES);
+                }
             });
 
-            function c6() {
-                c1.clearRect(0, 0, c0.width, c0.height);
-                for (let a = c2.length - 1; a >= 0; a--) {
-                    let b = c2[a];
-                    b.y += b.speedY;
-                    b.x += b.speedX;
-                    b.alpha -= 0.005;
-                    c1.beginPath();
-                    c1.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
-                    c1.fillStyle = `rgba(85, 4, 0, ${b.alpha})`;
-                    c1.fill();
-                    if (b.alpha <= 0) c2.splice(a, 1);
+            function renderParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    const p = particles[i];
+                    p.y     += p.speedY;
+                    p.x     += p.speedX;
+                    p.alpha -= 0.005;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(85, 4, 0, ${p.alpha})`;
+                    ctx.fill();
+                    if (p.alpha <= 0) particles.splice(i, 1);
                 }
-                requestAnimationFrame(c6);
+                requestAnimationFrame(renderParticles);
             }
-
-            c6();
-
-            const c7 = document.getElementById("h0snir");
-            c7.onclick = () => {
-                x5();
-            };
+            renderParticles();
         </script>
     </body>
 </html>
-
-
-

@@ -127,15 +127,19 @@
                 user-select: none;
                 z-index: 1000;
                 cursor: url("assets/misc/cursor.png"), auto;
-                width: 380px;
+                width: 400px;
                 box-sizing: border-box;
             }
 
             .player-controls {
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-start;
                 gap: 10px;
+            }
+
+            .player-controls #track-time {
+                margin-left: auto;
             }
 
             .player-info {
@@ -443,7 +447,7 @@
         <div class="player">
             <div class="player-controls">
                 <button id="mute-btn" class="icon-button">
-                    <img id="mute-icon" src="assets/buttons/speaker-muted.png" />
+                    <img id="mute-icon" src="assets/buttons/speaker-unmuted.png" />
                 </button>
                 <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5" />
                 <button id="prev-btn" class="icon-button">
@@ -456,12 +460,12 @@
                     <img src="assets/buttons/skip-forward.png" />
                 </button>
                 <button id="shuffle-btn" class="icon-button">
-                    <img id="shuffle-icon" src="assets/buttons/shuffle.png" />
+                    <img id="shuffle-icon" src="assets/buttons/noshuffle.png" />
                 </button>
+                <span id="track-time">0:00 | 0:00</span>
             </div>
             <div class="player-info">
                 <span id="now-playing"></span>
-                <span id="track-time">0:00 | 0:00</span>
                 <span id="track-counter">Track: 0 / 0</span>
             </div>
         </div>
@@ -723,7 +727,8 @@
             }
 
             function waitForReady(media) {
-                if (media.readyState >= 4) return Promise.resolve(true);
+                if (media.error)              return Promise.resolve(false);
+                if (media.readyState >= 4)    return Promise.resolve(true);
                 return new Promise((resolve) => {
                     const cleanup = () => {
                         media.removeEventListener("canplaythrough", onReady);
@@ -734,6 +739,15 @@
                     media.addEventListener("canplaythrough", onReady, { once: true });
                     media.addEventListener("error",          onError, { once: true });
                 });
+            }
+
+            function markNoTracks() {
+                nowPlaying.textContent   = "No playable tracks";
+                trackCounter.textContent = "Track: 0 / 0";
+                if (!initialMediaCounted) {
+                    initialMediaCounted = true;
+                    bumpProgress();
+                }
             }
 
             function removeTrackFromQueue(url) {
@@ -761,8 +775,7 @@
 
             async function loadCurrentTrack({ autoPlay } = { autoPlay: false }) {
                 if (shuffled.length === 0) {
-                    nowPlaying.textContent   = "No playable tracks";
-                    trackCounter.textContent = "Track: 0 / 0";
+                    markNoTracks();
                     return;
                 }
 
@@ -781,6 +794,7 @@
 
                 nowPlaying.textContent   = "Now Playing: " + fileName;
                 trackCounter.textContent = `Track: ${cursor + 1} / ${shuffled.length}`;
+                trackTime.textContent    = "0:00 | 0:00";
                 bgVideo.style.display    = "block";
                 document.body.classList.add("video-active");
 
@@ -790,8 +804,7 @@
                 if (!ok || bgVideo.error) {
                     removeTrackFromQueue(trackUrl);
                     if (shuffled.length === 0) {
-                        nowPlaying.textContent   = "No playable tracks";
-                        trackCounter.textContent = "Track: 0 / 0";
+                        markNoTracks();
                         return;
                     }
                     if (cursor >= shuffled.length) cursor = 0;
@@ -880,9 +893,7 @@
                 playlist.push(...available);
                 buildQueue();
                 if (playlist.length === 0) {
-                    nowPlaying.textContent   = "No playable tracks";
-                    trackCounter.textContent = "Track: 0 / 0";
-                    bumpProgress();
+                    markNoTracks();
                     return;
                 }
                 loadCurrentTrack({ autoPlay: false });
@@ -945,6 +956,13 @@
             window.addEventListener("resize", resizeCanvas);
             resizeCanvas();
 
+            let rafActive = false;
+            function startParticleLoop() {
+                if (rafActive) return;
+                rafActive = true;
+                requestAnimationFrame(renderParticles);
+            }
+
             document.addEventListener("mousemove", (e) => {
                 for (let i = 0; i < PARTICLES_PER_MOVE; i++) {
                     particles.push({
@@ -959,6 +977,7 @@
                 if (particles.length > MAX_PARTICLES) {
                     particles.splice(0, particles.length - MAX_PARTICLES);
                 }
+                startParticleLoop();
             });
 
             function renderParticles() {
@@ -974,9 +993,12 @@
                     ctx.fill();
                     if (p.alpha <= 0) particles.splice(i, 1);
                 }
-                requestAnimationFrame(renderParticles);
+                if (particles.length > 0) {
+                    requestAnimationFrame(renderParticles);
+                } else {
+                    rafActive = false;
+                }
             }
-            renderParticles();
         </script>
     </body>
 </html>

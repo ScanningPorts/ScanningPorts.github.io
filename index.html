@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#000000" />
+        <meta name="robots" content="noindex, nofollow" />
         <title>endrosity's vault</title>
         <link rel="icon" type="image/x-icon" href="assets/misc/favi.png" />
 
@@ -111,7 +112,7 @@
                 top: 0;
                 left: 0;
                 pointer-events: none;
-                z-index: 999;
+                z-index: 9999;
             }
 
             .player {
@@ -256,30 +257,54 @@
                 font-weight: bold;
                 color: #9916a0;
                 text-shadow: 0 0 2px #9916a0, 0 0 4px #9916a0, 0 0 16px #9916a0, 0 0 24px #9916a0;
+                user-select: none;
+                -webkit-user-select: none;
             }
 
             .elsewhere {
                 position: absolute;
-                bottom: 260px;
+                bottom: 210px;
                 width: 100%;
                 text-align: center;
                 font-weight: bold;
                 font-size: 2em;
+                user-select: none;
+                -webkit-user-select: none;
             }
 
-            .elsewhere a {
-                color: white;
-                text-decoration: underline;
+            .elsewhere .elsewhere-link {
+                color: #550400;
+                text-decoration: none;
                 font-weight: bold;
-                text-shadow: 0 0 1px white, 0 0 2px white, 0 0 4px white;
+                text-shadow: 0 0 3px #550400, 0 0 8px #550400;
                 transition: transform 0.3s ease;
                 display: inline-block;
                 cursor: url("assets/misc/cursor.png"), auto;
+                outline: none;
             }
 
-            .elsewhere a:hover {
+            .elsewhere .elsewhere-link:hover {
                 transform: scale(1.3);
             }
+
+            .elsewhere .elsewhere-link .char {
+                display: inline-block;
+                animation: char-grow 12.9s ease-in-out infinite;
+                animation-play-state: paused;
+                transform-origin: center bottom;
+            }
+
+            .elsewhere.chars-running .elsewhere-link .char {
+                animation-play-state: running;
+            }
+
+            @keyframes char-grow {
+                0%    { transform: scale(1); }
+                10.66% { transform: scale(1.45); }
+                21.32% { transform: scale(1); }
+                100%  { transform: scale(1); }
+            }
+
 
             #now-playing {
                 color: #550400;
@@ -289,11 +314,22 @@
                 user-select: none;
                 flex: 1 1 auto;
                 min-width: 0;
+                max-width: 240px;
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 padding: 10px 12px;
                 margin: -10px -12px;
+            }
+
+            .player-info #track-counter {
+                margin-left: auto;
+            }
+
+            #burn-btn {
+                position: absolute;
+                bottom: 8px;
+                left: 277px;
             }
 
             .reload-bar {
@@ -351,11 +387,7 @@
 
             #bg-video {
                 opacity: 0;
-                transition: opacity 0.5s ease;
-            }
-
-            body.video-active #bg-video {
-                opacity: 1;
+                transition: opacity 5s linear;
             }
 
             .credits-button {
@@ -382,11 +414,20 @@
                 left: 0;
                 width: 100vw;
                 height: 100vh;
-                background: rgba(0, 0, 0, 0.7);
+                background: rgba(0, 0, 0, 0.8);
                 z-index: 2000;
-                display: none;
+                display: flex;
                 align-items: center;
                 justify-content: center;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.45s ease;
+            }
+
+            #credits-overlay.visible {
+                opacity: 1;
+                pointer-events: auto;
+                transition: opacity 1s ease;
             }
 
             .credits-content {
@@ -399,6 +440,14 @@
                 box-shadow: 0 0 10px #9916a0, 0 0 20px #9916a0;
                 font-size: 1.1em;
                 text-shadow: 0 0 2px #fff;
+                user-select: none;
+                -webkit-user-select: none;
+            }
+
+            .credits-content img {
+                -webkit-user-drag: none;
+                user-drag: none;
+                pointer-events: none;
             }
 
             .credits-content .highlight {
@@ -468,6 +517,9 @@
                 <span id="now-playing"></span>
                 <span id="track-counter">Track: 0 / 0</span>
             </div>
+            <button id="burn-btn" class="icon-button" title="Burn current track">
+                <img src="assets/buttons/burn.png" />
+            </button>
         </div>
 
         <div class="swinger">
@@ -475,15 +527,15 @@
         </div>
 
         <div class="elsewhere">
-            <a href="https://emogir.ls/cute" target="_blank">Find me elsewhere</a>
+            <span id="elsewhere-link" class="elsewhere-link" role="link" tabindex="0" data-href="https://emogir.ls/cute">Find me elsewhere</span>
         </div>
 
         <div class="credits-button" id="credits-toggle">?</div>
 
         <div id="credits-overlay">
             <div class="credits-content" id="credits-content">
-                <p>Made by <a href="https://guns.lol/kunt" target="_blank" class="highlight">@kunt</a></p>
-                <img src="assets/misc/kunt.png" class="top-image" />
+                <p>Made by <span class="highlight" role="link" tabindex="0" data-href="https://guns.lol/kunt">@kunt</span></p>
+                <img src="assets/misc/kunt.png" class="top-image" draggable="false" ondragstart="return false" />
             </div>
         </div>
 
@@ -526,6 +578,7 @@
                 "assets/buttons/noshuffle.png",
                 "assets/buttons/on.png",
                 "assets/buttons/off.png",
+                "assets/buttons/burn.png",
                 "assets/misc/cursor.png",
                 "assets/misc/favi.png",
                 "assets/misc/kunt.png",
@@ -534,7 +587,9 @@
                 "assets/misc/sayori.png",
                 "assets/misc/swingset.png",
                 "assets/misc/miku.png",
-                "assets/misc/noose.png",
+                "assets/misc/yuri.png",
+                "assets/misc/natsuki.png",
+                "assets/misc/monika.png",
             ];
 
             const TOTAL_STEPS  = staticAssets.length + playlist.length + 1;
@@ -559,7 +614,13 @@
                 overlayDone = true;
                 refreshProgressLabel();
                 loadingOverlay.classList.add("fade-out");
-                setTimeout(() => loadingOverlay.remove(), 1750);
+                setTimeout(() => {
+                    loadingOverlay.remove();
+                    setTimeout(() => {
+                        const elsewhereDiv = document.querySelector(".elsewhere");
+                        if (elsewhereDiv) elsewhereDiv.classList.add("chars-running");
+                    }, 8750);
+                }, 1750);
             }
 
             const tickTimer = setInterval(() => {
@@ -577,11 +638,60 @@
                 img.src = src;
             });
 
+            const SETTINGS_KEY = "endrosity-settings";
+            function loadSettings() {
+                try { return JSON.parse(localStorage.getItem(SETTINGS_KEY)) || {}; }
+                catch (_) { return {}; }
+            }
+            function saveSettings(patch) {
+                const merged = Object.assign(loadSettings(), patch);
+                try { localStorage.setItem(SETTINGS_KEY, JSON.stringify(merged)); }
+                catch (_) {}
+            }
+            const savedSettings = loadSettings();
+
+            document.addEventListener("click", (e) => {
+                const t = e.target.closest("[data-href]");
+                if (!t) return;
+                e.stopPropagation();
+                window.open(t.dataset.href, "_blank", "noopener,noreferrer");
+            }, true);
+            document.addEventListener("keydown", (e) => {
+                if (e.key !== "Enter" && e.key !== " ") return;
+                const t = document.activeElement;
+                if (t && t.dataset && t.dataset.href) {
+                    e.preventDefault();
+                    window.open(t.dataset.href, "_blank", "noopener,noreferrer");
+                }
+            });
+
+            (function splitElsewhereChars() {
+                const link = document.getElementById("elsewhere-link");
+                if (!link) return;
+                const text = link.textContent;
+                const frag = document.createDocumentFragment();
+                let charIdx = 0;
+                for (const ch of text) {
+                    if (ch === " ") {
+                        frag.appendChild(document.createTextNode(" "));
+                    } else {
+                        const s = document.createElement("span");
+                        s.className = "char";
+                        s.textContent = ch;
+                        s.style.animationDelay = (charIdx * 0.1).toFixed(2) + "s";
+                        charIdx++;
+                        frag.appendChild(s);
+                    }
+                }
+                link.textContent = "";
+                link.appendChild(frag);
+            })();
+
             const creditsOverlay = document.getElementById("credits-overlay");
             const creditsContent = document.getElementById("credits-content");
 
             function toggleCredits() {
-                creditsOverlay.style.display = creditsOverlay.style.display === "flex" ? "none" : "flex";
+                creditsOverlay.classList.toggle("visible");
             }
 
             document.getElementById("credits-toggle").addEventListener("click", toggleCredits);
@@ -595,7 +705,9 @@
                 "assets/misc/sayori.png",
                 "assets/misc/swingset.png",
                 "assets/misc/miku.png",
-                "assets/misc/noose.png",
+                "assets/misc/yuri.png",
+                "assets/misc/natsuki.png",
+                "assets/misc/monika.png",
             ];
 
             function pickRandomSwinger() {
@@ -606,7 +718,7 @@
                 swingerImage.src = next;
             }
 
-            const initialSwingerExclusions = ["sayori.png", "noose.png", "hanging.png"];
+            const initialSwingerExclusions = ["sayori.png", "hanging.png"];
             const initialSwingerPool = swingerOptions.filter(
                 (src) => !initialSwingerExclusions.some((bad) => src.endsWith(bad))
             );
@@ -618,7 +730,12 @@
             const swingerToggleBtn  = document.getElementById("swinger-toggle-btn");
             const swingerToggleLbl  = document.getElementById("swinger-toggle-label");
             const swingerToggleIcon = document.getElementById("swinger-toggle-icon");
-            let swingerVisible = true;
+            let swingerVisible = savedSettings.swingerVisible !== false;
+            swingerContainer.classList.toggle("hidden", !swingerVisible);
+            swingerToggleLbl.textContent = swingerVisible ? "Disable Image" : "Enable Image";
+            swingerToggleIcon.src        = swingerVisible
+                ? "assets/buttons/on.png"
+                : "assets/buttons/off.png";
             swingerToggleBtn.addEventListener("click", () => {
                 swingerVisible = !swingerVisible;
                 swingerContainer.classList.toggle("hidden", !swingerVisible);
@@ -626,6 +743,7 @@
                 swingerToggleIcon.src         = swingerVisible
                     ? "assets/buttons/on.png"
                     : "assets/buttons/off.png";
+                saveSettings({ swingerVisible });
             });
 
             const konamiSequence = [
@@ -703,7 +821,88 @@
             let cursor          = 0;
             let loadToken       = 0;
             let initialMediaCounted = false;
-            let shuffleEnabled  = false;
+            let shuffleEnabled  = savedSettings.shuffleEnabled === true;
+            let shuffleEnabledAt = 0;
+            let fadeOutScheduled = false;
+            let fadeOutStartedAt = 0;
+            const FADE_MS = 5000;
+            const MANUAL_TYPE_MS = 2500;
+
+            let sliderVolume = 0.5;
+            let fadeMultiplier = 1;
+            let volumeFadeRaf = null;
+            function applyVolume() {
+                bgVideo.volume = Math.max(0, Math.min(1, sliderVolume * fadeMultiplier));
+            }
+            function fadeVolumeTo(target, duration) {
+                if (volumeFadeRaf) cancelAnimationFrame(volumeFadeRaf);
+                const startMult = fadeMultiplier;
+                const startTime = performance.now();
+                function step(now) {
+                    const t = Math.min(1, (now - startTime) / duration);
+                    fadeMultiplier = startMult + (target - startMult) * t;
+                    applyVolume();
+                    if (t < 1) volumeFadeRaf = requestAnimationFrame(step);
+                    else volumeFadeRaf = null;
+                }
+                volumeFadeRaf = requestAnimationFrame(step);
+            }
+            function snapVolumeMultiplier(value) {
+                if (volumeFadeRaf) cancelAnimationFrame(volumeFadeRaf);
+                volumeFadeRaf = null;
+                fadeMultiplier = value;
+                applyVolume();
+            }
+
+            let titleAnimToken = 0;
+            function setTitleInstant(text) {
+                titleAnimToken++;
+                nowPlaying.textContent = text;
+            }
+            function typeTitle(text, duration) {
+                const myToken = ++titleAnimToken;
+                const totalLen = text.length;
+                nowPlaying.textContent = "";
+                if (totalLen === 0) return;
+                const interval = duration / totalLen;
+                let len = 0;
+                function tick() {
+                    if (myToken !== titleAnimToken) return;
+                    len++;
+                    nowPlaying.textContent = text.slice(0, len);
+                    if (len < totalLen) setTimeout(tick, interval);
+                }
+                setTimeout(tick, interval);
+            }
+            function untypeTitle(duration) {
+                const myToken = ++titleAnimToken;
+                const text = nowPlaying.textContent;
+                const totalLen = text.length;
+                if (totalLen === 0) return;
+                const interval = duration / totalLen;
+                let len = totalLen;
+                function tick() {
+                    if (myToken !== titleAnimToken) return;
+                    len--;
+                    nowPlaying.textContent = text.slice(0, Math.max(0, len));
+                    if (len > 0) setTimeout(tick, interval);
+                }
+                setTimeout(tick, interval);
+            }
+
+            function maybeStartFadeOut() {
+                if (fadeOutScheduled || bgVideo.paused) return;
+                const duration = bgVideo.duration;
+                if (!isFinite(duration) || duration <= 0) return;
+                const remaining = duration - bgVideo.currentTime;
+                if (remaining > 0 && remaining <= FADE_MS / 1000) {
+                    fadeOutScheduled = true;
+                    fadeOutStartedAt = Date.now();
+                    bgVideo.style.opacity = "0";
+                    fadeVolumeTo(0, FADE_MS);
+                    untypeTitle(FADE_MS);
+                }
+            }
 
             function shuffleInPlace(array) {
                 for (let i = array.length - 1; i > 0; i--) {
@@ -720,8 +919,9 @@
             }
 
             function rebuildQueueAfterEnd(prevLastUrl) {
+                if (!shuffleEnabled) return;
                 buildQueue();
-                if (shuffleEnabled && shuffled.length > 1 && shuffled[0] === prevLastUrl) {
+                if (shuffled.length > 1 && shuffled[0] === prevLastUrl) {
                     [shuffled[0], shuffled[1]] = [shuffled[1], shuffled[0]];
                 }
             }
@@ -773,7 +973,14 @@
                 }
             }
 
-            async function loadCurrentTrack({ autoPlay } = { autoPlay: false }) {
+            function snapNoTransition(opacityValue) {
+                bgVideo.style.transition = "none";
+                bgVideo.style.opacity = opacityValue;
+                void bgVideo.offsetHeight;
+                bgVideo.style.transition = "";
+            }
+
+            async function loadCurrentTrack({ autoPlay, manual = false } = { autoPlay: false }) {
                 if (shuffled.length === 0) {
                     markNoTracks();
                     return;
@@ -782,8 +989,18 @@
                 const myToken   = ++loadToken;
                 const trackUrl  = shuffled[cursor];
                 const fileName  = trackUrl.split("/").pop();
+                const newTitle  = "Now Playing: " + fileName;
+                const shouldFade   = fadeOutScheduled && !manual;
+                const startedAt    = fadeOutStartedAt;
 
                 bgVideo.pause();
+
+                if (!shouldFade) {
+                    snapNoTransition("1");
+                    snapVolumeMultiplier(1);
+                    fadeOutScheduled = false;
+                    if (manual) setTitleInstant("");
+                }
 
                 if (!bgVideo.src.endsWith(trackUrl)) {
                     bgVideo.src = trackUrl;
@@ -792,7 +1009,6 @@
 
                 prefetchNextVideo();
 
-                nowPlaying.textContent   = "Now Playing: " + fileName;
                 trackCounter.textContent = `Track: ${cursor + 1} / ${shuffled.length}`;
                 trackTime.textContent    = "0:00 | 0:00";
                 bgVideo.style.display    = "block";
@@ -808,7 +1024,7 @@
                         return;
                     }
                     if (cursor >= shuffled.length) cursor = 0;
-                    return loadCurrentTrack({ autoPlay });
+                    return loadCurrentTrack({ autoPlay, manual });
                 }
 
                 if (!initialMediaCounted) {
@@ -818,26 +1034,45 @@
 
                 try { bgVideo.currentTime = 0; } catch (_) {}
 
+                if (shouldFade) {
+                    const elapsed   = Date.now() - startedAt;
+                    const remaining = Math.max(0, FADE_MS - elapsed);
+                    if (remaining > 0) {
+                        await new Promise((r) => setTimeout(r, remaining));
+                        if (myToken !== loadToken) return;
+                    }
+                    bgVideo.style.opacity = "1";
+                    fadeVolumeTo(1, FADE_MS);
+                    typeTitle(newTitle, FADE_MS);
+                    fadeOutScheduled = false;
+                } else if (manual) {
+                    typeTitle(newTitle, MANUAL_TYPE_MS);
+                } else {
+                    setTitleInstant(newTitle);
+                }
+
                 if (autoPlay) {
                     await bgVideo.play().catch(() => {});
                 }
             }
 
-            async function nextTrack(autoPlay = true) {
+            async function nextTrack(autoPlay = true, manual = false) {
                 cursor++;
                 if (cursor >= shuffled.length) {
                     const prevLast = shuffled[shuffled.length - 1];
                     rebuildQueueAfterEnd(prevLast);
                     cursor = 0;
                 }
-                await loadCurrentTrack({ autoPlay });
+                await loadCurrentTrack({ autoPlay, manual });
             }
 
-            async function prevTrack(autoPlay = true) {
+            async function prevTrack(autoPlay = true, manual = false) {
                 cursor = (cursor - 1 + shuffled.length) % shuffled.length;
-                await loadCurrentTrack({ autoPlay });
+                await loadCurrentTrack({ autoPlay, manual });
             }
 
+            sliderVolume      = 0.5;
+            fadeMultiplier    = 1;
             bgVideo.volume    = 0.5;
             bgVideo.muted     = false;
             volumeInput.value = 0.5;
@@ -899,11 +1134,40 @@
                 loadCurrentTrack({ autoPlay: false });
             })();
 
+            function reshuffleQueueWithCurrentFirst() {
+                const currentUrl = shuffled[cursor];
+                shuffled = shuffleInPlace([...playlist]);
+                if (currentUrl) {
+                    const idx = shuffled.indexOf(currentUrl);
+                    if (idx > 0) {
+                        shuffled.splice(idx, 1);
+                        shuffled.unshift(currentUrl);
+                    }
+                }
+                cursor = 0;
+                if (shuffled.length > 0) {
+                    trackCounter.textContent = `Track: ${cursor + 1} / ${shuffled.length}`;
+                }
+            }
+
+            let shuffleForceUsed = false;
             shuffleBtn.addEventListener("click", () => {
+                const now = Date.now();
+                if (shuffleEnabled && !shuffleForceUsed && now - shuffleEnabledAt < 750) {
+                    reshuffleQueueWithCurrentFirst();
+                    shuffleEnabledAt = now;
+                    shuffleForceUsed = true;
+                    return;
+                }
                 shuffleEnabled = !shuffleEnabled;
                 shuffleIcon.src = shuffleEnabled
                     ? "assets/buttons/shuffle.png"
                     : "assets/buttons/noshuffle.png";
+                if (shuffleEnabled) {
+                    shuffleEnabledAt = now;
+                    shuffleForceUsed = false;
+                }
+                saveSettings({ shuffleEnabled });
             });
 
             muteBtn.addEventListener("click", () => {
@@ -918,7 +1182,7 @@
                 else                bgVideo.pause();
             });
 
-            nextBtn.addEventListener("click", () => nextTrack(!bgVideo.paused));
+            nextBtn.addEventListener("click", () => nextTrack(!bgVideo.paused, true));
 
             prevBtn.addEventListener("click", async () => {
                 if (bgVideo.currentTime > 5) {
@@ -930,16 +1194,35 @@
                         await bgVideo.play().catch(() => {});
                     }
                 } else {
-                    prevTrack(!bgVideo.paused);
+                    prevTrack(!bgVideo.paused, true);
                 }
             });
 
             volumeInput.addEventListener("input", (e) => {
-                bgVideo.volume = parseFloat(e.target.value);
+                sliderVolume = parseFloat(e.target.value);
+                applyVolume();
             });
 
-            bgVideo.addEventListener("ended", () => nextTrack(true));
-            bgVideo.addEventListener("timeupdate",     updateTrackTime);
+            const burnBtn = document.getElementById("burn-btn");
+            burnBtn.addEventListener("click", async () => {
+                if (shuffled.length === 0) return;
+                const currentUrl = shuffled[cursor];
+                const wasPlaying = !bgVideo.paused;
+                bgVideo.pause();
+                removeTrackFromQueue(currentUrl);
+                if (shuffled.length === 0) {
+                    markNoTracks();
+                    return;
+                }
+                if (cursor >= shuffled.length) cursor = 0;
+                await loadCurrentTrack({ autoPlay: wasPlaying, manual: true });
+            });
+
+            bgVideo.addEventListener("ended", () => nextTrack(true, false));
+            bgVideo.addEventListener("timeupdate", () => {
+                updateTrackTime();
+                maybeStartFadeOut();
+            });
             bgVideo.addEventListener("loadedmetadata", updateTrackTime);
             bgVideo.addEventListener("durationchange", updateTrackTime);
 

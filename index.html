@@ -128,7 +128,7 @@
                 user-select: none;
                 z-index: 1000;
                 cursor: url("assets/misc/cursor.png"), auto;
-                width: 420px;
+                width: 410px;
                 box-sizing: border-box;
             }
 
@@ -140,7 +140,7 @@
             }
 
             .player-controls #track-time {
-                margin-left: 12px;
+                margin-left: 6px;
             }
 
             .player-info {
@@ -201,26 +201,26 @@
                 -webkit-appearance: none;
                 width: 16px;
                 height: 16px;
-                background: #9916a0;
+                background: #550400;
                 cursor: url("assets/misc/cursor.png"), pointer;
                 border-radius: 50%;
                 margin-top: -5px;
             }
 
             input[type="range"]:hover::-webkit-slider-thumb {
-                background: #b33fc0;
+                background: #8a0500;
             }
 
             input[type="range"]::-moz-range-thumb {
                 width: 16px;
                 height: 16px;
-                background: #9916a0;
+                background: #550400;
                 cursor: url("assets/misc/cursor.png"), pointer;
                 border-radius: 50%;
             }
 
             input[type="range"]:hover::-moz-range-thumb {
-                background: #b33fc0;
+                background: #8a0500;
             }
 
             .swinger {
@@ -255,15 +255,15 @@
                 left: 20px;
                 font-size: 1em;
                 font-weight: bold;
-                color: #9916a0;
-                text-shadow: 0 0 2px #9916a0, 0 0 4px #9916a0, 0 0 16px #9916a0, 0 0 24px #9916a0;
+                color: #550400;
+                text-shadow: 0 0 2px #550400, 0 0 4px #550400, 0 0 16px #550400, 0 0 24px #550400;
                 user-select: none;
                 -webkit-user-select: none;
             }
 
             .elsewhere {
                 position: absolute;
-                bottom: 210px;
+                bottom: 160px;
                 width: 100%;
                 text-align: center;
                 font-weight: bold;
@@ -326,10 +326,8 @@
                 margin-left: auto;
             }
 
-            #burn-btn {
-                position: absolute;
-                bottom: 8px;
-                left: 277px;
+            #shuffle-btn {
+                margin-left: -4px;
             }
 
             .reload-bar {
@@ -396,8 +394,8 @@
                 right: 20px;
                 font-size: 1em;
                 font-weight: bold;
-                color: #9916a0;
-                text-shadow: 0 0 2px #9916a0, 0 0 4px #9916a0, 0 0 16px #9916a0, 0 0 24px #9916a0;
+                color: #550400;
+                text-shadow: 0 0 2px #550400, 0 0 4px #550400, 0 0 16px #550400, 0 0 24px #550400;
                 cursor: url("assets/misc/cursor.png"), pointer;
                 user-select: none;
                 z-index: 1000;
@@ -432,12 +430,12 @@
 
             .credits-content {
                 background-color: rgba(0, 0, 0, 0.2);
-                border: 2px solid #9916a0;
+                border: 2px solid #550400;
                 padding: 20px 40px;
                 border-radius: 12px;
                 color: #fff;
                 text-align: center;
-                box-shadow: 0 0 10px #9916a0, 0 0 20px #9916a0;
+                box-shadow: 0 0 10px #550400, 0 0 20px #550400;
                 font-size: 1.1em;
                 text-shadow: 0 0 2px #fff;
                 user-select: none;
@@ -453,7 +451,11 @@
             .credits-content .highlight {
                 color: #fff;
                 font-weight: bold;
-                text-shadow: 0 0 2px #9916a0, 0 0 6px #9916a0;
+                text-shadow:
+                    0 0 4px #550400,
+                    0 0 8px #550400,
+                    0 0 14px #550400,
+                    0 0 22px #550400;
                 cursor: url("assets/misc/cursor.png"), pointer;
                 text-decoration: none;
             }
@@ -465,6 +467,40 @@
             .top-image {
                 width: 150px;
                 height: auto;
+            }
+
+            .seek-indicator {
+                position: fixed;
+                top: 50%;
+                transform: translateY(-50%);
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                opacity: 0;
+                pointer-events: none;
+                z-index: 9999;
+                color: #fff;
+                font-size: 1.125em;
+                font-weight: bold;
+                text-shadow: 0 0 4px #000, 0 0 10px #000;
+            }
+
+            .seek-indicator img {
+                width: 54.4px;
+                height: 54.4px;
+            }
+
+            .seek-indicator.left  { left:  1.5%; }
+            .seek-indicator.right { right: 1.5%; flex-direction: row-reverse; }
+
+            .seek-indicator.show {
+                animation: seek-flash 1s ease-out forwards;
+            }
+
+            @keyframes seek-flash {
+                0%      { opacity: 1; }
+                75%     { opacity: 1; }   /* 0.75s hold */
+                100%    { opacity: 0; }   /* 0.25s fade */
             }
         </style>
     </head>
@@ -517,9 +553,6 @@
                 <span id="now-playing"></span>
                 <span id="track-counter">Track: 0 / 0</span>
             </div>
-            <button id="burn-btn" class="icon-button" title="Burn current track">
-                <img src="assets/buttons/burn.png" />
-            </button>
         </div>
 
         <div class="swinger">
@@ -539,6 +572,15 @@
             </div>
         </div>
 
+        <div id="seek-indicator-left" class="seek-indicator left">
+            <img src="assets/buttons/goleft.png" />
+            <span>-5s</span>
+        </div>
+        <div id="seek-indicator-right" class="seek-indicator right">
+            <img src="assets/buttons/goright.png" />
+            <span>+5s</span>
+        </div>
+
         <div class="signature">endrosity</div>
 
         <div class="reload-bar">
@@ -556,8 +598,19 @@
             const loadingOverlay  = document.getElementById("loading-overlay");
             const loadingProgress = document.getElementById("loading-progress");
 
+            (function cycleTabTitle() {
+                const suffixes = [":3", ":p", "x3", ":<", ":o", ":c", ":>", ":b", ":d", "xP"];
+                let i = 0;
+                function tickTitle() {
+                    document.title = `endrosity's vault | ${suffixes[i]}`;
+                    i = (i + 1) % suffixes.length;
+                }
+                tickTitle();
+                setInterval(tickTitle, 1750);
+            })();
+
             const trackNames = [
-                "Aware", "Breaking", "Confined", "Crush", "Crying", "Destruction",
+                "Breaking", "Confined", "Crush", "Crying", "Destruction",
                 "Enough", "Heartbreak", "Limerence", "Loser",
                 "Lovely", "Lost", "Nights", "Power", "Rejection", "Resonance",
                 "Scared", "Shattered", "Sinner", "Sleeping", "Slump",
@@ -578,7 +631,8 @@
                 "assets/buttons/noshuffle.png",
                 "assets/buttons/on.png",
                 "assets/buttons/off.png",
-                "assets/buttons/burn.png",
+                "assets/buttons/goleft.png",
+                "assets/buttons/goright.png",
                 "assets/misc/cursor.png",
                 "assets/misc/favi.png",
                 "assets/misc/kunt.png",
@@ -724,7 +778,10 @@
             );
             swingerImage.src = initialSwingerPool[Math.floor(Math.random() * initialSwingerPool.length)];
 
-            document.getElementById("reload-btn").addEventListener("click", pickRandomSwinger);
+            document.getElementById("reload-btn").addEventListener("click", () => {
+                if (!swingerVisible) return;
+                pickRandomSwinger();
+            });
 
             const swingerContainer  = document.querySelector(".swinger");
             const swingerToggleBtn  = document.getElementById("swinger-toggle-btn");
@@ -816,6 +873,12 @@
             function updateTrackTime() {
                 trackTime.textContent = `${formatTime(bgVideo.currentTime)} | ${formatTime(bgVideo.duration)}`;
             }
+            function formatTrackCounter() {
+                const total = shuffled.length;
+                if (total === 0) return "Track: 0/0";
+                const width = String(total).length;
+                return `Track: ${String(cursor + 1).padStart(width, "0")}/${total}`;
+            }
 
             let shuffled        = [];
             let cursor          = 0;
@@ -825,6 +888,8 @@
             let shuffleEnabledAt = 0;
             let fadeOutScheduled = false;
             let fadeOutStartedAt = 0;
+            let fadeOutDurationMs = 0;
+            let transitioning = false;
             const FADE_MS = 5000;
             const MANUAL_TYPE_MS = 2500;
 
@@ -905,11 +970,14 @@
                 if (!isFinite(duration) || duration <= 0) return;
                 const remaining = duration - bgVideo.currentTime;
                 if (remaining > 0 && remaining <= FADE_MS / 1000) {
-                    fadeOutScheduled = true;
-                    fadeOutStartedAt = Date.now();
+                    const durMs = Math.max(50, Math.round(remaining * 1000));
+                    fadeOutScheduled  = true;
+                    fadeOutStartedAt  = Date.now();
+                    fadeOutDurationMs = durMs;
+                    bgVideo.style.transition = `opacity ${durMs}ms linear`;
                     bgVideo.style.opacity = "0";
-                    fadeVolumeTo(0, FADE_MS);
-                    untypeTitle(FADE_MS);
+                    fadeVolumeTo(0, durMs);
+                    untypeTitle(durMs);
                 }
             }
 
@@ -952,7 +1020,7 @@
 
             function markNoTracks() {
                 nowPlaying.textContent   = "No playable tracks";
-                trackCounter.textContent = "Track: 0 / 0";
+                trackCounter.textContent = "Track: 0/0";
                 if (!initialMediaCounted) {
                     initialMediaCounted = true;
                     bumpProgress();
@@ -966,11 +1034,17 @@
                     if (cursor > idx) cursor--;
                 }
                 const plIdx = playlist.indexOf(url);
-                if (plIdx >= 0) playlist.splice(plIdx, 1);
+                if (plIdx >= 0) {
+                    playlist.splice(plIdx, 1);
+                    saveSettings({ persistentOrder: [...playlist] });
+                }
             }
 
-            bgVideo.addEventListener("play",  () => { playIcon.src = "assets/buttons/pause.png"; });
-            bgVideo.addEventListener("pause", () => { playIcon.src = "assets/buttons/play.png";  });
+            bgVideo.addEventListener("play",  () => { if (!transitioning) playIcon.src = "assets/buttons/pause.png"; });
+            bgVideo.addEventListener("pause", () => {
+                if (transitioning || bgVideo.ended) return;
+                playIcon.src = "assets/buttons/play.png";
+            });
 
             function prefetchNextVideo() {
                 if (shuffled.length < 2) return;
@@ -996,73 +1070,85 @@
                 }
 
                 const myToken   = ++loadToken;
-                const trackUrl  = shuffled[cursor];
-                const fileName = trackUrl.split("/").pop();
-                const prefix = "Now Playing: ";
-				const newTitle = fileName;
-                const shouldFade   = fadeOutScheduled && !manual;
-                const startedAt    = fadeOutStartedAt;
+                transitioning = true;
+                try {
+                    const trackUrl  = shuffled[cursor];
+                    const fileName = trackUrl.split("/").pop();
+                    const prefix = "Now Playing: ";
+                    const newTitle = fileName;
+                    const shouldFade   = fadeOutScheduled && !manual;
+                    const startedAt    = fadeOutStartedAt;
+                    const fadeOutDur   = fadeOutDurationMs;
 
-                bgVideo.pause();
+                    bgVideo.pause();
 
-                if (!shouldFade) {
-                    snapNoTransition("1");
-                    snapVolumeMultiplier(1);
-                    fadeOutScheduled = false;
-                    if (manual) setTitleInstant("");
-                }
-
-                if (!bgVideo.src.endsWith(trackUrl)) {
-                    bgVideo.src = trackUrl;
-                    bgVideo.load();
-                }
-
-                prefetchNextVideo();
-
-                trackCounter.textContent = `Track: ${cursor + 1} / ${shuffled.length}`;
-                trackTime.textContent    = "0:00 | 0:00";
-                bgVideo.style.display    = "block";
-                document.body.classList.add("video-active");
-
-                const ok = await waitForReady(bgVideo);
-                if (myToken !== loadToken) return;
-
-                if (!ok || bgVideo.error) {
-                    removeTrackFromQueue(trackUrl);
-                    if (shuffled.length === 0) {
-                        markNoTracks();
-                        return;
+                    if (!shouldFade) {
+                        snapNoTransition("1");
+                        snapVolumeMultiplier(1);
+                        fadeOutScheduled = false;
+                        if (manual) setTitleInstant("");
                     }
-                    if (cursor >= shuffled.length) cursor = 0;
-                    return loadCurrentTrack({ autoPlay, manual });
-                }
 
-                if (!initialMediaCounted) {
-                    initialMediaCounted = true;
-                    bumpProgress();
-                }
-
-                try { bgVideo.currentTime = 0; } catch (_) {}
-
-                if (shouldFade) {
-                    const elapsed   = Date.now() - startedAt;
-                    const remaining = Math.max(0, FADE_MS - elapsed);
-                    if (remaining > 0) {
-                        await new Promise((r) => setTimeout(r, remaining));
-                        if (myToken !== loadToken) return;
+                    if (!bgVideo.src.endsWith(trackUrl)) {
+                        bgVideo.src = trackUrl;
+                        bgVideo.load();
                     }
-                    bgVideo.style.opacity = "1";
-                    fadeVolumeTo(1, FADE_MS);
-                    typeTitle(newTitle, FADE_MS);
-                    fadeOutScheduled = false;
-                } else if (manual) {
-                    typeTitle(newTitle, MANUAL_TYPE_MS);
-                } else {
-                    setTitleInstant(newTitle);
-                }
 
-                if (autoPlay) {
-                    await bgVideo.play().catch(() => {});
+                    prefetchNextVideo();
+
+                    trackCounter.textContent = formatTrackCounter();
+                    trackTime.textContent    = "0:00 | 0:00";
+                    bgVideo.style.display    = "block";
+                    document.body.classList.add("video-active");
+
+                    const ok = await waitForReady(bgVideo);
+                    if (myToken !== loadToken) return;
+
+                    if (!ok || bgVideo.error) {
+                        removeTrackFromQueue(trackUrl);
+                        if (shuffled.length === 0) {
+                            markNoTracks();
+                            return;
+                        }
+                        if (cursor >= shuffled.length) cursor = 0;
+                        return loadCurrentTrack({ autoPlay, manual });
+                    }
+
+                    if (!initialMediaCounted) {
+                        initialMediaCounted = true;
+                        bumpProgress();
+                    }
+
+                    try { bgVideo.currentTime = 0; } catch (_) {}
+
+                    if (shouldFade) {
+                        const elapsed   = Date.now() - startedAt;
+                        const remaining = Math.max(0, fadeOutDur - elapsed);
+                        if (remaining > 0) {
+                            await new Promise((r) => setTimeout(r, remaining));
+                            if (myToken !== loadToken) return;
+                        }
+                        bgVideo.style.transition = `opacity ${FADE_MS}ms linear`;
+                        bgVideo.style.opacity = "1";
+                        fadeVolumeTo(1, FADE_MS);
+                        typeTitle(newTitle, FADE_MS);
+                        fadeOutScheduled = false;
+                    } else if (manual) {
+                        typeTitle(newTitle, MANUAL_TYPE_MS);
+                    } else {
+                        setTitleInstant(newTitle);
+                    }
+
+                    if (autoPlay) {
+                        await bgVideo.play().catch(() => {});
+                    }
+                } finally {
+                    if (myToken === loadToken) {
+                        transitioning = false;
+                        playIcon.src = bgVideo.paused
+                            ? "assets/buttons/play.png"
+                            : "assets/buttons/pause.png";
+                    }
                 }
             }
 
@@ -1134,8 +1220,23 @@
 
             (async () => {
                 const available = await probePlaylist();
+
+                const saved = Array.isArray(savedSettings.persistentOrder)
+                    ? savedSettings.persistentOrder
+                    : null;
+                let order;
+                if (saved) {
+                    const availableSet = new Set(available);
+                    order = saved.filter((url) => availableSet.has(url));
+                    const seen = new Set(order);
+                    const newOnes = available.filter((url) => !seen.has(url));
+                    if (newOnes.length) order.push(...shuffleInPlace(newOnes));
+                } else {
+                    order = shuffleInPlace([...available]);
+                }
+
                 playlist.length = 0;
-                playlist.push(...available);
+                playlist.push(...order);
                 buildQueue();
                 if (playlist.length === 0) {
                     markNoTracks();
@@ -1156,7 +1257,7 @@
                 }
                 cursor = 0;
                 if (shuffled.length > 0) {
-                    trackCounter.textContent = `Track: ${cursor + 1} / ${shuffled.length}`;
+                    trackCounter.textContent = formatTrackCounter();
                 }
             }
 
@@ -1176,6 +1277,10 @@
                 if (shuffleEnabled) {
                     shuffleEnabledAt = now;
                     shuffleForceUsed = false;
+                } else {
+                    playlist.length = 0;
+                    playlist.push(...shuffled);
+                    saveSettings({ persistentOrder: [...playlist] });
                 }
                 saveSettings({ shuffleEnabled });
             });
@@ -1213,20 +1318,56 @@
                 applyVolume();
             });
 
-            const burnBtn = document.getElementById("burn-btn");
-            burnBtn.addEventListener("click", async () => {
-                if (shuffled.length === 0) return;
-                const currentUrl = shuffled[cursor];
-                const wasPlaying = !bgVideo.paused;
-                bgVideo.pause();
-                removeTrackFromQueue(currentUrl);
-                if (shuffled.length === 0) {
-                    markNoTracks();
+            document.addEventListener("pointerup", () => {
+                const ae = document.activeElement;
+                if (!ae) return;
+                const tag = ae.tagName;
+                if (tag === "BUTTON" || (tag === "INPUT" && ae.type === "range")) {
+                    ae.blur();
+                }
+            });
+
+            const seekIndicators = {
+                left:  document.getElementById("seek-indicator-left"),
+                right: document.getElementById("seek-indicator-right"),
+            };
+            function flashSeekIndicator(side) {
+                const el = seekIndicators[side];
+                if (!el) return;
+                el.classList.remove("show");
+                void el.offsetWidth;
+                el.classList.add("show");
+            }
+
+            document.addEventListener("keydown", (e) => {
+                const ae = document.activeElement;
+                const tag = ae ? ae.tagName : "";
+                const hasHref = !!(ae && ae.dataset && ae.dataset.href);
+                const isFormControl = hasHref || tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || tag === "BUTTON";
+
+                if (e.key === " " || e.code === "Space") {
+                    if (isFormControl) return;
+                    e.preventDefault();
+                    if (bgVideo.paused) bgVideo.play().catch(() => {});
+                    else                bgVideo.pause();
                     return;
                 }
-                if (cursor >= shuffled.length) cursor = 0;
-                await loadCurrentTrack({ autoPlay: wasPlaying, manual: true });
-            });
+
+                if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+                    // Konami: ignore L/R while inside the LRLR window (after UUDD, before BA)
+                    if (konamiIndex >= 4 && konamiIndex < 8) return;
+                    if (isFormControl) return;
+                    const delta = e.key === "ArrowLeft" ? -5 : 5;
+                    const dur = bgVideo.duration;
+                    let next = bgVideo.currentTime + delta;
+                    if (!isFinite(next)) return;
+                    if (next < 0) next = 0;
+                    if (isFinite(dur) && next > dur) next = dur;
+                    try { bgVideo.currentTime = next; } catch (_) {}
+                    updateTrackTime();
+                    flashSeekIndicator(delta < 0 ? "left" : "right");
+                }
+            }, true);
 
             bgVideo.addEventListener("ended", () => nextTrack(true, false));
             bgVideo.addEventListener("timeupdate", () => {

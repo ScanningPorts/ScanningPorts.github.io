@@ -857,36 +857,45 @@
             let titleAnimToken = 0;
             function setTitleInstant(text) {
                 titleAnimToken++;
-                nowPlaying.textContent = text;
+                nowPlaying.textContent = "Now Playing: " + text;
             }
             function typeTitle(text, duration) {
                 const myToken = ++titleAnimToken;
                 const totalLen = text.length;
-                nowPlaying.textContent = "";
+                nowPlaying.textContent = "Now Playing: ";
                 if (totalLen === 0) return;
                 const interval = duration / totalLen;
                 let len = 0;
                 function tick() {
                     if (myToken !== titleAnimToken) return;
                     len++;
-                    nowPlaying.textContent = text.slice(0, len);
+                    nowPlaying.textContent = "Now Playing: " + text.slice(0, len);
                     if (len < totalLen) setTimeout(tick, interval);
                 }
                 setTimeout(tick, interval);
             }
             function untypeTitle(duration) {
                 const myToken = ++titleAnimToken;
-                const text = nowPlaying.textContent;
+                const prefix = "Now Playing: ";
+                const fullText = nowPlaying.textContent;
+
+                const text = fullText.startsWith(prefix)
+                    ? fullText.slice(prefix.length)
+                    : fullText;
+
                 const totalLen = text.length;
                 if (totalLen === 0) return;
+
                 const interval = duration / totalLen;
                 let len = totalLen;
+
                 function tick() {
                     if (myToken !== titleAnimToken) return;
                     len--;
-                    nowPlaying.textContent = text.slice(0, Math.max(0, len));
+                    nowPlaying.textContent = prefix + text.slice(0, Math.max(0, len));
                     if (len > 0) setTimeout(tick, interval);
                 }
+
                 setTimeout(tick, interval);
             }
 
@@ -988,8 +997,9 @@
 
                 const myToken   = ++loadToken;
                 const trackUrl  = shuffled[cursor];
-                const fileName  = trackUrl.split("/").pop();
-                const newTitle  = "Now Playing: " + fileName;
+                const fileName = trackUrl.split("/").pop();
+                const prefix = "Now Playing: ";
+				const newTitle = fileName;
                 const shouldFade   = fadeOutScheduled && !manual;
                 const startedAt    = fadeOutStartedAt;
 

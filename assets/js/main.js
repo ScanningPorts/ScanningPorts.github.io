@@ -78,10 +78,10 @@ const loadingProgress = document.getElementById("loading-progress");
 
 const trackNames = [
     "Breaking", "Confined", "Crush", "Crying", "Destruction",
-    "Enough", "Heartbreak", "Limerence", "Loser",
-    "Lovely", "Lost", "Nights", "Power", "Rejection", "Resonance",
-    "Scared", "Shattered", "Sinner", "Sleeping", "Slump",
-    "Therapy", "Undermined", "Untitled",
+    "Enough", "Heartbreak", "Limerence", "Loser", "Faces",
+    "Lovely", "Lost", "Nights", "Power", "Rejection",
+    "Scared", "Shattered", "Potency", "Sleeping", "Resonance",
+    "Therapy", "Undermined",
 ];
 const videoPath = (name) => `assets/videos/${name}.mp4`;
 const playlist  = trackNames.map(videoPath);

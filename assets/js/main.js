@@ -78,7 +78,7 @@ const loadingProgress = document.getElementById("loading-progress");
 
 const trackNames = [
     "Breaking", "Confined", "Crush", "Crying", "Destruction",
-    "Enough", "Heartbreak", "Limerence", "Loser", "Faces",
+    "Enough", "Heartbreak", "Limerence", "Loser", "Internal",
     "Lovely", "Lost", "Nights", "Power", "Rejection",
     "Scared", "Shattered", "Potency", "Sleeping", "Resonance",
     "Therapy", "Undermined",

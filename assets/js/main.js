@@ -81,7 +81,7 @@ const trackNames = [
     "Enough", "Heartbreak", "Internal", "Limerence", "Loser",
     "Lost", "Lovely", "Nights", "Power", "Rejection",
     "Resonance", "Scared", "Sleeping", "Slump", "Therapy", 
-    "Undermined",
+    "Undermined", "Faces",
 ];
 const videoPath = (name) => `assets/videos/${name}.mp4`;
 const playlist  = trackNames.map(videoPath);
